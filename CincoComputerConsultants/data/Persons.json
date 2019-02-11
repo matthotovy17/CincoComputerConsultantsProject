@@ -1,0 +1,262 @@
+{
+  "1svndr": {
+    "personUuid": "1svndr",
+    "lastName": "McCoy",
+    "firstName": "Sylvester",
+    "address": {
+      "street": "126-01 Roosevelt Ave",
+      "city": " Flushing",
+      "state": " NY",
+      "zip": "11368",
+      "country": "USA"
+    },
+    "email": "slyguy@hotmail.com,mccoy@whofan.com"
+  },
+  "aef1": {
+    "personUuid": "aef1",
+    "lastName": "Gekko",
+    "firstName": " Gordon",
+    "address": {
+      "street": "1 Wall Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10005-0012",
+      "country": "USA"
+    },
+    "email": ""
+  },
+  "321f": {
+    "personUuid": "321f",
+    "lastName": "Fox",
+    "firstName": " Bud",
+    "address": {
+      "street": "321 Bronx Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10004",
+      "country": "USA"
+    },
+    "email": "bfox@gmail.com,csheen@crazy.net"
+  },
+  "321na": {
+    "personUuid": "321na",
+    "lastName": "Pertwee",
+    "firstName": " Jon",
+    "address": {
+      "street": "301 Front St W",
+      "city": " Toronto",
+      "state": " ON",
+      "zip": " M5V 2T6",
+      "country": " Canada"
+    },
+    "email": "jpet@whofan.com"
+  },
+  "321dr": {
+    "personUuid": "321dr",
+    "lastName": "Baker",
+    "firstName": " C.",
+    "address": {
+      "street": "Avery Hall",
+      "city": "Lincoln",
+      "state": "NE",
+      "zip": "68503",
+      "country": "USA"
+    },
+    "email": "dr@baker.com"
+  },
+  "ma12": {
+    "personUuid": "ma12",
+    "lastName": "Sveum",
+    "firstName": " Dale",
+    "address": {
+      "street": "1060 West Addison Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60613",
+      "country": "USA"
+    },
+    "email": "sveum@cubs.com"
+  },
+  "2342": {
+    "personUuid": "2342",
+    "lastName": "O\u0027Brien",
+    "firstName": " Miles",
+    "address": {
+      "street": "123 Friendly Street",
+      "city": "Ottawa",
+      "state": "ON",
+      "zip": "K1A 0G9",
+      "country": "Canada"
+    },
+    "email": ""
+  },
+  "doc05": {
+    "personUuid": "doc05",
+    "lastName": "Davison",
+    "firstName": " Peter",
+    "address": {
+      "street": "123 Cabo San Lucas",
+      "city": " Los Cabos",
+      "state": " BCS",
+      "zip": " ",
+      "country": " Mexico"
+    },
+    "email": ""
+  },
+  "wrddoc": {
+    "personUuid": "wrddoc",
+    "lastName": "Smith",
+    "firstName": " Matt",
+    "address": {
+      "street": "333 W 35th St",
+      "city": " Chicago",
+      "state": " IL",
+      "zip": "60616",
+      "country": "USA"
+    },
+    "email": "msmith@who.com,thedoc@cse.unl.edu"
+  },
+  "123lst": {
+    "personUuid": "123lst",
+    "lastName": "McGann",
+    "firstName": " Paul",
+    "address": {
+      "street": "1 MetLife Stadium Dr",
+      "city": " East Rutherford",
+      "state": " NJ",
+      "zip": "07073",
+      "country": "USA"
+    },
+    "email": "pmcgann@mlb.com,foo@bar.com,pmc@unl.edu"
+  },
+  "321nd": {
+    "personUuid": "321nd",
+    "lastName": "Hartnell",
+    "firstName": " William",
+    "address": {
+      "street": "1060 West Addison Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60613",
+      "country": "USA"
+    },
+    "email": "whartnell@doctors.com,dr@who.com"
+  },
+  "944c": {
+    "personUuid": "944c",
+    "lastName": "Castro",
+    "firstName": " Starlin",
+    "address": {
+      "street": "1060 West Addison Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60613",
+      "country": "USA"
+    },
+    "email": "scastro@cubs.com,starlin_castro13@gmail.com"
+  },
+  "231": {
+    "personUuid": "231",
+    "lastName": "Baker",
+    "firstName": "Tom",
+    "address": {
+      "street": "1 Blue Jays Way",
+      "city": " Toronto",
+      "state": " ON",
+      "zip": " M5V 1J1",
+      "country": " Canada"
+    },
+    "email": "famousdoc@who.com,tbaker@cse.unl.edu,mostfamous@whovian.com,thedoctor@bbc.com"
+  },
+  "nwdoc1": {
+    "personUuid": "nwdoc1",
+    "lastName": "Eccleston",
+    "firstName": " Chris",
+    "address": {
+      "street": "1 E 161st St",
+      "city": " Bronx",
+      "state": " NY",
+      "zip": "10451",
+      "country": "USA"
+    },
+    "email": "newguy@whovian.com"
+  },
+  "nf32a": {
+    "personUuid": "nf32a",
+    "lastName": "Troughton",
+    "firstName": " Patrick",
+    "address": {
+      "street": "1060 West Addison Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60613",
+      "country": "USA"
+    },
+    "email": "ptroug@cse.unl.edu,ptrou32@unl.edu"
+  },
+  "55bb": {
+    "personUuid": "55bb",
+    "lastName": "O\u0027Brien",
+    "firstName": " Miles",
+    "address": {
+      "street": "8753 West 3rd Ave.",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75001",
+      "country": "USA"
+    },
+    "email": "obrien@ds9.com,obrien@enterprise.gov"
+  },
+  "6doc": {
+    "personUuid": "6doc",
+    "lastName": "Hurndall",
+    "firstName": " Richard",
+    "address": {
+      "street": "Campos El290",
+      "city": "Mexico City",
+      "state": " FD",
+      "zip": "",
+      "country": " Mexico"
+    },
+    "email": "rhurndall@cse.unl.edu,richard@unl.edu"
+  },
+  "bbchar": {
+    "personUuid": "bbchar",
+    "lastName": "Ehrmantraut",
+    "firstName": " Kaylee",
+    "address": {
+      "street": "800 West 7th Street",
+      "city": " Albuquerque",
+      "state": " NM",
+      "zip": " 87105",
+      "country": "USA"
+    },
+    "email": ""
+  },
+  "2ndbestd": {
+    "personUuid": "2ndbestd",
+    "lastName": "Tennant",
+    "firstName": " David",
+    "address": {
+      "street": "700 E Grand Ave",
+      "city": " Chicago",
+      "state": " IL",
+      "zip": " 60611",
+      "country": "USA"
+    },
+    "email": "actor@shakespeare.com,tdavid@unl.edu"
+  },
+  "306a": {
+    "personUuid": "306a",
+    "lastName": "Sampson",
+    "firstName": " Brock",
+    "address": {
+      "street": "123 N 1st Street",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68116",
+      "country": "USA"
+    },
+    "email": "brock_f_sampson@gmail.com,bsampson@venture.com"
+  }
+}

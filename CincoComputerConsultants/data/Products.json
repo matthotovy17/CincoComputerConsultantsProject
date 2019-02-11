@@ -1,0 +1,97 @@
+[
+  {
+    "pricePerUnit": 140.56,
+    "productUuid": "a34e",
+    "type": "E",
+    "name": "GreyScale Organizer"
+  },
+  {
+    "pricePerUnit": 2289.41,
+    "productUuid": "24fg",
+    "type": "E",
+    "name": "Dog Fone"
+  },
+  {
+    "pricePerUnit": 549.99,
+    "productUuid": "f9f2",
+    "type": "E",
+    "name": "GreyScale Sound System"
+  },
+  {
+    "pricePerUnit": 1010.1,
+    "productUuid": "1449",
+    "type": "E",
+    "name": "Dog Discs"
+  },
+  {
+    "consultantPersonCode": {
+      "personUuid": "55bb",
+      "lastName": "O\u0027Brien",
+      "firstName": " Miles",
+      "address": {
+        "street": "8753 West 3rd Ave.",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75001",
+        "country": "USA"
+      },
+      "email": "obrien@ds9.com,obrien@enterprise.gov"
+    },
+    "hourlyFee": 35.0,
+    "productUuid": "94ka",
+    "type": "C",
+    "name": "Dog Fone Training"
+  },
+  {
+    "consultantPersonCode": {
+      "personUuid": "306a",
+      "lastName": "Sampson",
+      "firstName": " Brock",
+      "address": {
+        "street": "123 N 1st Street",
+        "city": "Omaha",
+        "state": "NE",
+        "zip": "68116",
+        "country": "USA"
+      },
+      "email": "brock_f_sampson@gmail.com,bsampson@venture.com"
+    },
+    "hourlyFee": 150.0,
+    "productUuid": "22kl",
+    "type": "C",
+    "name": "Sound System Setup"
+  },
+  {
+    "consultantPersonCode": {
+      "personUuid": "944c",
+      "lastName": "Castro",
+      "firstName": " Starlin",
+      "address": {
+        "street": "1060 West Addison Street",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60613",
+        "country": "USA"
+      },
+      "email": "scastro@cubs.com,starlin_castro13@gmail.com"
+    },
+    "hourlyFee": 50.0,
+    "productUuid": "900g",
+    "type": "C",
+    "name": "Organizer Training"
+  },
+  {
+    "annualLicenseFee": 3500.0,
+    "serviceFee": 12000.0,
+    "productUuid": "1p94",
+    "type": "L",
+    "name": "PlayByPlay Long Distance Service"
+  },
+  {
+    "annualLicenseFee": 400.0,
+    "serviceFee": 5500.0,
+    "productUuid": "111a",
+    "type": "L",
+    "name": "Fone Registration"
+  }
+]

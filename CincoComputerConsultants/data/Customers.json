@@ -1,0 +1,252 @@
+[
+  {
+    "customerCode": "149j",
+    "type": "G",
+    "primaryContactUuid": {
+      "personUuid": "231",
+      "lastName": "Baker",
+      "firstName": "Tom",
+      "address": {
+        "street": "1 Blue Jays Way",
+        "city": " Toronto",
+        "state": " ON",
+        "zip": " M5V 1J1",
+        "country": " Canada"
+      },
+      "email": "famousdoc@who.com,tbaker@cse.unl.edu,mostfamous@whovian.com,thedoctor@bbc.com"
+    },
+    "name": "Altavista",
+    "address": {
+      "street": "7695 Lakewood Gardens Terrace",
+      "city": "Malpique",
+      "state": "Guangzhou",
+      "zip": "2250-325",
+      "country": "Portugal"
+    }
+  },
+  {
+    "customerCode": "ry5h",
+    "type": "G",
+    "primaryContactUuid": {
+      "personUuid": "6doc",
+      "lastName": "Hurndall",
+      "firstName": " Richard",
+      "address": {
+        "street": "Campos El290",
+        "city": "Mexico City",
+        "state": " FD",
+        "zip": "",
+        "country": " Mexico"
+      },
+      "email": "rhurndall@cse.unl.edu,richard@unl.edu"
+    },
+    "name": "Cakewalk",
+    "address": {
+      "street": "6866 Petterle Street",
+      "city": "Jinfeng",
+      "state": "",
+      "zip": "",
+      "country": "China"
+    }
+  },
+  {
+    "customerCode": "u6wf",
+    "type": "G",
+    "primaryContactUuid": {
+      "personUuid": "321dr",
+      "lastName": "Baker",
+      "firstName": " C.",
+      "address": {
+        "street": "Avery Hall",
+        "city": "Lincoln",
+        "state": "NE",
+        "zip": "68503",
+        "country": "USA"
+      },
+      "email": "dr@baker.com"
+    },
+    "name": "Lavasoft",
+    "address": {
+      "street": "963 Burning Wood Alley",
+      "city": "Beijing",
+      "state": "",
+      "zip": "",
+      "country": "China"
+    }
+  },
+  {
+    "customerCode": "ttew",
+    "type": "G",
+    "primaryContactUuid": {
+      "personUuid": "1svndr",
+      "lastName": "McCoy",
+      "firstName": "Sylvester",
+      "address": {
+        "street": "126-01 Roosevelt Ave",
+        "city": " Flushing",
+        "state": " NY",
+        "zip": "11368",
+        "country": "USA"
+      },
+      "email": "slyguy@hotmail.com,mccoy@whofan.com"
+    },
+    "name": "Borland",
+    "address": {
+      "street": "656 Vidon Center",
+      "city": "Shenzhen",
+      "state": "",
+      "zip": "",
+      "country": "China"
+    }
+  },
+  {
+    "customerCode": "lnuv",
+    "type": "G",
+    "primaryContactUuid": {
+      "personUuid": "123lst",
+      "lastName": "McGann",
+      "firstName": " Paul",
+      "address": {
+        "street": "1 MetLife Stadium Dr",
+        "city": " East Rutherford",
+        "state": " NJ",
+        "zip": "07073",
+        "country": "USA"
+      },
+      "email": "pmcgann@mlb.com,foo@bar.com,pmc@unl.edu"
+    },
+    "name": "Adobe",
+    "address": {
+      "street": "89 Saint Paul Way",
+      "city": "Marsa Alam",
+      "state": "",
+      "zip": "",
+      "country": "Egypt"
+    }
+  },
+  {
+    "customerCode": "5xtt",
+    "type": "C",
+    "primaryContactUuid": {
+      "personUuid": "nwdoc1",
+      "lastName": "Eccleston",
+      "firstName": " Chris",
+      "address": {
+        "street": "1 E 161st St",
+        "city": " Bronx",
+        "state": " NY",
+        "zip": "10451",
+        "country": "USA"
+      },
+      "email": "newguy@whovian.com"
+    },
+    "name": "Chami",
+    "address": {
+      "street": "62 Dexter Hill",
+      "city": "Tunal",
+      "state": "",
+      "zip": "",
+      "country": "Peru"
+    }
+  },
+  {
+    "customerCode": "as4d",
+    "type": "C",
+    "primaryContactUuid": {
+      "personUuid": "2ndbestd",
+      "lastName": "Tennant",
+      "firstName": " David",
+      "address": {
+        "street": "700 E Grand Ave",
+        "city": " Chicago",
+        "state": " IL",
+        "zip": " 60611",
+        "country": "USA"
+      },
+      "email": "actor@shakespeare.com,tdavid@unl.edu"
+    },
+    "name": "Macromedia",
+    "address": {
+      "street": "654 Little Fleur Parkway",
+      "city": "Ban Houakhoua",
+      "state": "",
+      "zip": "",
+      "country": "Laos"
+    }
+  },
+  {
+    "customerCode": "3l50",
+    "type": "C",
+    "primaryContactUuid": {
+      "personUuid": "wrddoc",
+      "lastName": "Smith",
+      "firstName": " Matt",
+      "address": {
+        "street": "333 W 35th St",
+        "city": " Chicago",
+        "state": " IL",
+        "zip": "60616",
+        "country": "USA"
+      },
+      "email": "msmith@who.com,thedoc@cse.unl.edu"
+    },
+    "name": "Microsoft",
+    "address": {
+      "street": "306 Clemons Place",
+      "city": "Jaguimitan",
+      "state": "",
+      "zip": "1664",
+      "country": "Philippines"
+    }
+  },
+  {
+    "customerCode": "nb9s",
+    "type": "C",
+    "primaryContactUuid": {
+      "personUuid": "bbchar",
+      "lastName": "Ehrmantraut",
+      "firstName": " Kaylee",
+      "address": {
+        "street": "800 West 7th Street",
+        "city": " Albuquerque",
+        "state": " NM",
+        "zip": " 87105",
+        "country": "USA"
+      },
+      "email": ""
+    },
+    "name": "Finale",
+    "address": {
+      "street": "17783 American Lane",
+      "city": "Muyuzi",
+      "state": "",
+      "zip": "",
+      "country": "China"
+    }
+  },
+  {
+    "customerCode": "8ooe",
+    "type": "C",
+    "primaryContactUuid": {
+      "personUuid": "doc05",
+      "lastName": "Davison",
+      "firstName": " Peter",
+      "address": {
+        "street": "123 Cabo San Lucas",
+        "city": " Los Cabos",
+        "state": " BCS",
+        "zip": " ",
+        "country": " Mexico"
+      },
+      "email": ""
+    },
+    "name": "Apple Systems",
+    "address": {
+      "street": "6 Jana Crossing",
+      "city": "Ramos West",
+      "state": "",
+      "zip": "3309",
+      "country": "Philippines"
+    }
+  }
+]
