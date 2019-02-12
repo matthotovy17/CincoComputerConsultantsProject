@@ -2,25 +2,21 @@
   {
     "pricePerUnit": 140.56,
     "productUuid": "a34e",
-    "type": "E",
     "name": "GreyScale Organizer"
   },
   {
     "pricePerUnit": 2289.41,
     "productUuid": "24fg",
-    "type": "E",
     "name": "Dog Fone"
   },
   {
     "pricePerUnit": 549.99,
     "productUuid": "f9f2",
-    "type": "E",
     "name": "GreyScale Sound System"
   },
   {
     "pricePerUnit": 1010.1,
     "productUuid": "1449",
-    "type": "E",
     "name": "Dog Discs"
   },
   {
@@ -39,7 +35,6 @@
     },
     "hourlyFee": 35.0,
     "productUuid": "94ka",
-    "type": "C",
     "name": "Dog Fone Training"
   },
   {
@@ -58,7 +53,6 @@
     },
     "hourlyFee": 150.0,
     "productUuid": "22kl",
-    "type": "C",
     "name": "Sound System Setup"
   },
   {
@@ -77,21 +71,18 @@
     },
     "hourlyFee": 50.0,
     "productUuid": "900g",
-    "type": "C",
     "name": "Organizer Training"
   },
   {
     "annualLicenseFee": 3500.0,
     "serviceFee": 12000.0,
     "productUuid": "1p94",
-    "type": "L",
     "name": "PlayByPlay Long Distance Service"
   },
   {
     "annualLicenseFee": 400.0,
     "serviceFee": 5500.0,
     "productUuid": "111a",
-    "type": "L",
     "name": "Fone Registration"
   }
 ]

@@ -1,7 +1,6 @@
 [
   {
     "customerCode": "149j",
-    "type": "G",
     "primaryContactUuid": {
       "personUuid": "231",
       "lastName": "Baker",
@@ -26,7 +25,6 @@
   },
   {
     "customerCode": "ry5h",
-    "type": "G",
     "primaryContactUuid": {
       "personUuid": "6doc",
       "lastName": "Hurndall",
@@ -51,7 +49,6 @@
   },
   {
     "customerCode": "u6wf",
-    "type": "G",
     "primaryContactUuid": {
       "personUuid": "321dr",
       "lastName": "Baker",
@@ -76,7 +73,6 @@
   },
   {
     "customerCode": "ttew",
-    "type": "G",
     "primaryContactUuid": {
       "personUuid": "1svndr",
       "lastName": "McCoy",
@@ -101,7 +97,6 @@
   },
   {
     "customerCode": "lnuv",
-    "type": "G",
     "primaryContactUuid": {
       "personUuid": "123lst",
       "lastName": "McGann",
@@ -126,7 +121,6 @@
   },
   {
     "customerCode": "5xtt",
-    "type": "C",
     "primaryContactUuid": {
       "personUuid": "nwdoc1",
       "lastName": "Eccleston",
@@ -151,7 +145,6 @@
   },
   {
     "customerCode": "as4d",
-    "type": "C",
     "primaryContactUuid": {
       "personUuid": "2ndbestd",
       "lastName": "Tennant",
@@ -176,7 +169,6 @@
   },
   {
     "customerCode": "3l50",
-    "type": "C",
     "primaryContactUuid": {
       "personUuid": "wrddoc",
       "lastName": "Smith",
@@ -201,7 +193,6 @@
   },
   {
     "customerCode": "nb9s",
-    "type": "C",
     "primaryContactUuid": {
       "personUuid": "bbchar",
       "lastName": "Ehrmantraut",
@@ -226,7 +217,6 @@
   },
   {
     "customerCode": "8ooe",
-    "type": "C",
     "primaryContactUuid": {
       "personUuid": "doc05",
       "lastName": "Davison",

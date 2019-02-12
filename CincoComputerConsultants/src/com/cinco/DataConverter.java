@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,7 +21,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DataConverter {
-	
+
 //  switch this file from the main part of the program to just have
 //  methods that open and parse the data and puts them into hashmaps
 //  and the methods return that hashmap
@@ -37,13 +38,12 @@ public class DataConverter {
 //		
 //	}
 
-	public static void main(String args[]) {
-
+	public static Map<String, Person> getPersonData(String fileName) {
 		/**
 		 * HashMap for the persons object to create key value pairs with personUuid in
 		 * order for the customer object to find the corresponding person object
 		 */
-		HashMap<String, Person> personMap = new HashMap<String, Person>();
+		Map<String, Person> personMap = new HashMap<String, Person>();
 		Scanner personFile = null;
 
 		// Open file and set person file to scanner
@@ -77,20 +77,30 @@ public class DataConverter {
 		personFile.close();
 
 		// Converting personMap to prettyPrinting JSON format
-		Gson gsonBuilderPerson = new GsonBuilder().setPrettyPrinting().create();
-		FileWriter personsOutputFile = null;
-		try {
-			personsOutputFile = new FileWriter("data/Persons.json");
-			personsOutputFile.write(gsonBuilderPerson.toJson(personMap));
-			personsOutputFile.close();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+//		Gson gsonBuilderPerson = new GsonBuilder().setPrettyPrinting().create();
+//		FileWriter personsOutputFile = null;
+//		try {
+//			personsOutputFile = new FileWriter("data/Persons.json");
+//			personsOutputFile.write(gsonBuilderPerson.toJson(personMap));
+//			personsOutputFile.close();
+//		} catch (IOException e1) {
+//			e1.printStackTrace();
+//		}
+		// ---------> TODO: now that we are done with phase1 I don't think we need this
+		// anymore
+
+		return personMap;
+	}
+
+//	public static void main(String args[]) {
 
 //------------------------------------------------------------------------------
 
+	public static Map<String, Product> getProductData(String fileName, Map<String, Person> personMap) {
+
 		// Read in and parse the products file to put them into objects
-		List<Product> productList = new ArrayList<Product>();
+//		List<Product> productList = new ArrayList<Product>();// ---------------> TODO:switch this to a hashMap
+		Map<String, Product> productMap = new HashMap<String, Product>();
 		Scanner productsFile = null;
 
 		// Open file and set product file to scanner
@@ -114,17 +124,18 @@ public class DataConverter {
 				// Read type and set parameters to corresponding product subclass
 				if (tokens[1].equals("E")) {
 					pricePerUnit = Double.parseDouble(tokens[3]);
-					p = new Equipment(productUuid, name, pricePerUnit); //type
+					p = new Equipment(productUuid, name, pricePerUnit); // type
 				} else if (tokens[1].equals("L")) {
 					annualLicenseFee = Double.parseDouble(tokens[3]);
 					serviceFee = Double.parseDouble(tokens[4]);
-					p = new License(productUuid, name, annualLicenseFee, serviceFee); //type
+					p = new License(productUuid, name, annualLicenseFee, serviceFee); // type
 				} else if (tokens[1].equals("C")) {
 					consultantPersonUuid = personMap.get(tokens[3]);
 					hourlyFee = Double.parseDouble(tokens[4]);
-					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); //type
+					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); // type
 				}
-				productList.add(p);
+//				productList.add(p);
+				productMap.put(productUuid, p);
 			}
 		}
 		productsFile.close();
@@ -134,16 +145,22 @@ public class DataConverter {
 		FileWriter productOutputFile = null;
 		try {
 			productOutputFile = new FileWriter("data/Products.json");
-			productOutputFile.write(gsonBuilderProduct.toJson(productList));
+			productOutputFile.write(gsonBuilderProduct.toJson(productMap));
 			productOutputFile.close();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 
+		return productMap;
+	}
+
 //-----------------------------------------------------------------------------
 
+	public static Map<String, Customer> getCustomerData(String fileName, Map<String, Person> personMap) {
+
 		// Read in and parse the customers file to put them into objects
-		List<Customer> customerList = new ArrayList<Customer>();
+//		List<Customer> customerList = new ArrayList<Customer>(); //-----------> TODO: switch this to a hashmap.
+		Map<String, Customer> customerMap = new HashMap<String, Customer>();
 		Scanner customerFile = null;
 
 		// Open file and set customer file to scanner
@@ -158,7 +175,7 @@ public class DataConverter {
 		for (int i = 0; i < numCustomerFileLines; i++) {
 			String line = customerFile.nextLine();
 			if (!line.trim().isEmpty()) {
-				Customer cus = null;
+				Customer c = null;
 				String tokens[] = line.split(";");
 				String customerUuid = tokens[0];
 				Person primaryContactUuid = personMap.get(tokens[2]);
@@ -167,11 +184,12 @@ public class DataConverter {
 				Address address = new Address(ad[0], ad[1], ad[2], ad[3], ad[4]);
 				// Read type and set parameters for corresponding customer subclass
 				if (tokens[1].equals("G")) {
-					cus = new GovernmentCustomer(customerUuid, primaryContactUuid, name, address);
+					c = new GovernmentCustomer(customerUuid, primaryContactUuid, name, address);
 				} else if (tokens[1].equals("C")) {
-					cus = new CorporateCustomer(customerUuid, primaryContactUuid, name, address);
+					c = new CorporateCustomer(customerUuid, primaryContactUuid, name, address);
 				}
-				customerList.add(cus);
+//				customerList.add(c);
+				customerMap.put(customerUuid, c);
 			}
 		}
 		customerFile.close();
@@ -181,10 +199,13 @@ public class DataConverter {
 		FileWriter customerOutputFile = null;
 		try {
 			customerOutputFile = new FileWriter("data/Customers.json");
-			customerOutputFile.write(gsonBuilderCustomer.toJson(customerList));
+			customerOutputFile.write(gsonBuilderCustomer.toJson(customerMap));
 			customerOutputFile.close();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+
+		return customerMap;
 	}
+
 }
