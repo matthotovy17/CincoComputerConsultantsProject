@@ -1,8 +1,4 @@
 20
-321na;Pertwee, Jon;301 Front St W, Toronto, ON, M5V 2T6, Canada;jpet@whofan.com
-
-
-//these persons corespond to customer primary contacts from Customers.dat
 231;Baker,Tom;1 Blue Jays Way, Toronto, ON, M5V 1J1, Canada;famousdoc@who.com,tbaker@cse.unl.edu,mostfamous@whovian.com,thedoctor@bbc.com
 6doc;Hurndall, Richard;Campos El290,Mexico City, FD,, Mexico;rhurndall@cse.unl.edu,richard@unl.edu
 321dr;Baker, C.;Avery Hall,Lincoln,NE,68503,USA;dr@baker.com
@@ -13,15 +9,10 @@ nwdoc1;Eccleston, Chris;1 E 161st St, Bronx, NY,10451,USA;newguy@whovian.com
 wrddoc;Smith, Matt;333 W 35th St, Chicago, IL,60616,USA;msmith@who.com,thedoc@cse.unl.edu
 bbchar;Ehrmantraut, Kaylee;800 West 7th Street, Albuquerque, NM, 87105,USA;
 doc05;Davison, Peter;123 Cabo San Lucas, Los Cabos, BCS, , Mexico;
-
-
-//these persons correspond with constultantUuid's from Products.dat
 944c;Castro, Starlin;1060 West Addison Street,Chicago,IL,60613,USA;scastro@cubs.com,starlin_castro13@gmail.com
 306a;Sampson, Brock;123 N 1st Street,Omaha,NE,68116,USA;brock_f_sampson@gmail.com,bsampson@venture.com
 55bb;O'Brien, Miles;8753 West 3rd Ave.,Dallas,TX,75001,USA;obrien@ds9.com,obrien@enterprise.gov
-
-
-//These persons correspond with Invoice salesPersonUuid in Invoices.dat
+321na;Pertwee, Jon;301 Front St W, Toronto, ON, M5V 2T6, Canada;jpet@whofan.com
 2342;O'Brien, Miles;123 Friendly Street,Ottawa,ON,K1A 0G9,Canada;
 aef1;Gekko, Gordon;1 Wall Street,New York,NY,10005-0012,USA;
 321f;Fox, Bud;321 Bronx Street,New York,NY,10004,USA;bfox@gmail.com,csheen@crazy.net
