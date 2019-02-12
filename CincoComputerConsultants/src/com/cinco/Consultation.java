@@ -17,6 +17,10 @@ public class Consultation extends Product {
 		this.consultantPersonCode = consultantPersonCode;
 		this.hourlyFee = hourlyFee;
 	}
+	
+	public String getType() {
+		return "Consultation";
+	}
 
 	public Person getConsultantPersonCode() {
 		return consultantPersonCode;

@@ -8,9 +8,16 @@ public class Equipment extends Product {
 		super(uuid, type, name);
 		this.pricePerUnit = pricePerUnit;
 	}
+	
+	public String getType() {
+		return "Equipment";
+	}
 
 	public double getPricePerUnit() {
-		return pricePerUnit;
+		return pricePerUnit; 
 	}
+	
+	//eventualy we will have the total cost which we will need a total cost
+	// function that gets pricePerUnit * #OfUnits.
 
 }

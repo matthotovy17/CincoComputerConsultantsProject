@@ -15,13 +15,9 @@ public abstract class Product {
 
 	public Product(String productUuid, String type, String name) {
 		super();
-		this.type = type;
+		this.type = type; //since we make type an abstract method we should take this out.
 		this.productUuid = productUuid;
 		this.name = name;
-	}
-
-	public String getType() {
-		return type;
 	}
 
 	public String getProductUuid() {
@@ -31,5 +27,7 @@ public abstract class Product {
 	public String getName() {
 		return name;
 	}
+	
+	public abstract String getType();
 
 }

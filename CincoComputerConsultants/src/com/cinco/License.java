@@ -10,6 +10,10 @@ public class License extends Product {
 		this.annualLicenseFee = annualLicenseFee;
 		this.serviceFee = serviceFee;
 	}
+	
+	public String getType() {
+		return "License";
+	}
 
 	public double getAnnualLicenseFee() {
 		return annualLicenseFee;
@@ -18,5 +22,6 @@ public class License extends Product {
 	public double getServiceFee() {
 		return serviceFee;
 	}
+	
 
 }
