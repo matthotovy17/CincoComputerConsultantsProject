@@ -7,7 +7,7 @@
 
 package com.cinco;
 
-public class Customer {
+public abstract class Customer {
 
 	protected String customerCode;
 	protected String type;
@@ -27,10 +27,6 @@ public class Customer {
 		return customerCode;
 	}
 
-	public String getType() {
-		return type;
-	}
-
 	public Person getPrimaryContactUuid() {
 		return primaryContactUuid;
 	}
@@ -42,4 +38,7 @@ public class Customer {
 	public Address getAddress() {
 		return address;
 	}
+	
+	public abstract double getComplianceFee();
+	public abstract String getType();
 }

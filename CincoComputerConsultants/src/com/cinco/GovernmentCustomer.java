@@ -13,6 +13,10 @@ public class GovernmentCustomer extends Customer {
 			Address address) {
 		super(customerCode, type, primaryContactUuid, name, address);
 	}
+	
+	public String getType() {
+		return "G";
+	}
 
 	public double getComplianceFee() {
 		return 125.00;

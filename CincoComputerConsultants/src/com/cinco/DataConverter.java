@@ -20,6 +20,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DataConverter {
+	
+//  switch this file from the main part of the program to just have
+//  methods that open and parse the data and puts them into hashmaps
+//  and the methods return that hashmap
+//	
+//	public static HashMap getPersonData(File name) {
+//		
+//	}
+//	
+//	public static HashMap getProductData(File name) {
+//		
+//	}
+//	
+//	public static HashMap getCustomerData(File name) {
+//		
+//	}
 
 	public static void main(String args[]) {
 

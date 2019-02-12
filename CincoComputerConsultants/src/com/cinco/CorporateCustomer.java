@@ -13,6 +13,10 @@ public class CorporateCustomer extends Customer {
 			Address address) {
 		super(customerCode, type, primaryContactUuid, name, address);
 	}
+	
+	public String getType() {
+		return "C";
+	}
 
 	public double getComplianceFee() {
 		return 0.00;
