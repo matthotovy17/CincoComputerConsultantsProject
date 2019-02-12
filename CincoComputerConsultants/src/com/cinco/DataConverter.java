@@ -161,16 +161,15 @@ public class DataConverter {
 				Customer cus = null;
 				String tokens[] = line.split(";");
 				String customerUuid = tokens[0];
-				String type = tokens[1];
 				Person primaryContactUuid = personMap.get(tokens[2]);
 				String name = tokens[3];
 				String ad[] = tokens[4].split(",");
 				Address address = new Address(ad[0], ad[1], ad[2], ad[3], ad[4]);
 				// Read type and set parameters for corresponding customer subclass
 				if (tokens[1].equals("G")) {
-					cus = new GovernmentCustomer(customerUuid, type, primaryContactUuid, name, address);
+					cus = new GovernmentCustomer(customerUuid, primaryContactUuid, name, address);
 				} else if (tokens[1].equals("C")) {
-					cus = new CorporateCustomer(customerUuid, type, primaryContactUuid, name, address);
+					cus = new CorporateCustomer(customerUuid, primaryContactUuid, name, address);
 				}
 				customerList.add(cus);
 			}

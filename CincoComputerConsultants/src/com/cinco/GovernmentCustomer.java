@@ -9,13 +9,13 @@ package com.cinco;
 
 public class GovernmentCustomer extends Customer {
 
-	public GovernmentCustomer(String customerCode, String type, Person primaryContactUuid, String name,
+	public GovernmentCustomer(String customerCode, Person primaryContactUuid, String name,
 			Address address) {
-		super(customerCode, type, primaryContactUuid, name, address);
+		super(customerCode, primaryContactUuid, name, address);
 	}
 	
 	public String getType() {
-		return "G";
+		return "Government";
 	}
 
 	public double getComplianceFee() {

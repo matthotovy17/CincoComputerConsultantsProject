@@ -10,14 +10,13 @@ package com.cinco;
 public abstract class Customer {
 
 	protected String customerCode;
-	protected String type;
 	protected Person primaryContactUuid;
 	protected String name;
 	protected Address address;
 
-	public Customer(String customerCode, String type, Person primaryContactUuid, String name, Address address) {
+	public Customer(String customerCode, Person primaryContactUuid, String name, Address address) {
+		super();
 		this.customerCode = customerCode;
-		this.type = type;
 		this.primaryContactUuid = primaryContactUuid;
 		this.name = name;
 		this.address = address;

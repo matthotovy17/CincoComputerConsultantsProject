@@ -9,13 +9,13 @@ package com.cinco;
 
 public class CorporateCustomer extends Customer {
 
-	public CorporateCustomer(String customerCode, String type, Person primaryContactUuid, String name,
+	public CorporateCustomer(String customerCode, Person primaryContactUuid, String name,
 			Address address) {
-		super(customerCode, type, primaryContactUuid, name, address);
+		super(customerCode, primaryContactUuid, name, address);
 	}
 	
 	public String getType() {
-		return "C";
+		return "Corporate";
 	}
 
 	public double getComplianceFee() {
