@@ -5,8 +5,6 @@
  * This object is for the address pertaining to the person and customer
  */
 
-// hello
-//hello chloe
 package com.cinco;
 
 public class Address {
