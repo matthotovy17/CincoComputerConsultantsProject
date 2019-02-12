@@ -1,10 +1,12 @@
 9
-a34e;E;GreyScale Organizer;140.56
 24fg;E;Dog Fone;2289.41
 f9f2;E;GreyScale Sound System;549.99
 1449;E;Dog Discs;1010.10
-94ka;C;Dog Fone Training;55bb;35.00
 22kl;C;Sound System Setup;306a;150.00
 900g;C;Organizer Training;944c;50.00
 1p94;L;PlayByPlay Long Distance Service;3500.00;12000.00
+
+//These products correspond with productUuid's from invoice.dat
+a34e;E;GreyScale Organizer;140.56
+94ka;C;Dog Fone Training;55bb;35.00
 111a;L;Fone Registration;400.00;5500.00

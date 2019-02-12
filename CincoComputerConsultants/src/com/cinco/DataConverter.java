@@ -92,8 +92,6 @@ public class DataConverter {
 		return personMap;
 	}
 
-//	public static void main(String args[]) {
-
 //------------------------------------------------------------------------------
 
 	public static Map<String, Product> getProductData(String fileName, Map<String, Person> personMap) {
