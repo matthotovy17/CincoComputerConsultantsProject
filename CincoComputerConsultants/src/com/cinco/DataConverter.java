@@ -108,7 +108,6 @@ public class DataConverter {
 				Product p = null;
 				String tokens[] = line.split(";");
 				String productUuid = tokens[0];
-				String type = tokens[1];
 				String name = tokens[2];
 				double pricePerUnit, annualLicenseFee, serviceFee, hourlyFee;
 				Person consultantPersonUuid;
