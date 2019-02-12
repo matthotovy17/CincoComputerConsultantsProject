@@ -115,15 +115,15 @@ public class DataConverter {
 				// Read type and set parameters to corresponding product subclass
 				if (tokens[1].equals("E")) {
 					pricePerUnit = Double.parseDouble(tokens[3]);
-					p = new Equipment(productUuid, type, name, pricePerUnit);
+					p = new Equipment(productUuid, name, pricePerUnit); //type
 				} else if (tokens[1].equals("L")) {
 					annualLicenseFee = Double.parseDouble(tokens[3]);
 					serviceFee = Double.parseDouble(tokens[4]);
-					p = new License(productUuid, type, name, annualLicenseFee, serviceFee);
+					p = new License(productUuid, name, annualLicenseFee, serviceFee); //type
 				} else if (tokens[1].equals("C")) {
 					consultantPersonUuid = personMap.get(tokens[3]);
 					hourlyFee = Double.parseDouble(tokens[4]);
-					p = new Consultation(productUuid, type, name, consultantPersonUuid, hourlyFee);
+					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); //type
 				}
 				productList.add(p);
 			}

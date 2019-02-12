@@ -5,8 +5,8 @@ public class License extends Product {
 	private double annualLicenseFee;
 	private double serviceFee;
 
-	public License(String uuid, String type, String name, double annualLicenseFee, double serviceFee) {
-		super(uuid, type, name);
+	public License(String uuid, String name, double annualLicenseFee, double serviceFee) { //String type.
+		super(uuid, name); //type
 		this.annualLicenseFee = annualLicenseFee;
 		this.serviceFee = serviceFee;
 	}

@@ -10,12 +10,12 @@ package com.cinco;
 public abstract class Product {
 
 	protected String productUuid;
-	protected String type;
+//	protected String type;
 	protected String name;
 
-	public Product(String productUuid, String type, String name) {
+	public Product(String productUuid, String name) { //String type.
 		super();
-		this.type = type; //since we make type an abstract method we should take this out.
+//		this.type = type; //since we make type an abstract method we should take this out.
 		this.productUuid = productUuid;
 		this.name = name;
 	}

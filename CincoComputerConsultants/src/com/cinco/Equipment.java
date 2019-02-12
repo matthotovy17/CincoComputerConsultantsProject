@@ -4,8 +4,8 @@ public class Equipment extends Product {
 
 	private double pricePerUnit;
 
-	public Equipment(String uuid, String type, String name, double pricePerUnit) {
-		super(uuid, type, name);
+	public Equipment(String uuid, String name, double pricePerUnit) { //String type
+		super(uuid, name); //type
 		this.pricePerUnit = pricePerUnit;
 	}
 	

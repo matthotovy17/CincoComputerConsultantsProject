@@ -12,8 +12,8 @@ public class Consultation extends Product {
 	private Person consultantPersonCode;
 	private double hourlyFee;
 
-	public Consultation(String productUuid, String type, String name, Person consultantPersonCode, double hourlyFee) {
-		super(productUuid, type, name);
+	public Consultation(String productUuid, String name, Person consultantPersonCode, double hourlyFee) { //String type
+		super(productUuid, name);//type
 		this.consultantPersonCode = consultantPersonCode;
 		this.hourlyFee = hourlyFee;
 	}
