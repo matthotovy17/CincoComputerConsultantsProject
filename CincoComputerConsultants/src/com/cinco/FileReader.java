@@ -4,20 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class FileReader {
 	
 	public FileReader(){}
-	
-	
-	
-	
 	
 	public static Map<String, Person> getPersonsData(String fileName) {
 		/**
@@ -46,40 +40,28 @@ public class FileReader {
 			String firstName = name[1];
 			String addr[] = tokens[2].split(",");
 			Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
+			ArrayList<String> email = new ArrayList<String>();
 			if (tokens.length != 4) {
-				p = new Person(personUuid, lastName, firstName, address, "");
+				email.add("");
+				p = new Person(personUuid, lastName, firstName, address, email);
 			} else {
-				String email = tokens[3];
+				String emails[] = tokens[3].split(",");
+				for(int j = 0; j < emails.length; j++) {
+					email.add(emails[j]);
+				}
 				p = new Person(personUuid, lastName, firstName, address, email);
 			}
 			// Map key value pairs
 			personMap.put(personUuid, p);
 		}
 		personFile.close();
-
-		// Converting personMap to prettyPrinting JSON format
-//		Gson gsonBuilderPerson = new GsonBuilder().setPrettyPrinting().create();
-//		FileWriter personsOutputFile = null;
-//		try {
-//			personsOutputFile = new FileWriter("data/Persons.json");
-//			personsOutputFile.write(gsonBuilderPerson.toJson(personMap));
-//			personsOutputFile.close();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-		// ---------> TODO: now that we are done with phase1 I don't think we need this
-		// anymore
-
 		return personMap;
 	}
+  
+	
 
-	
-	
 	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
-		
-
 		// Read in and parse the customers file to put them into objects
-//		List<Customer> customerList = new ArrayList<Customer>(); //-----------> TODO: switch this to a hashmap.
 		Map<String, Customer> customerMap = new HashMap<String, Customer>();
 		Scanner customerFile = null;
 
@@ -113,25 +95,11 @@ public class FileReader {
 			}
 		}
 		customerFile.close();
-
-		// Converting customer array list to prettyPrinting JSON format
-		Gson gsonBuilderCustomer = new GsonBuilder().setPrettyPrinting().create();
-		FileWriter customerOutputFile = null;
-		try {
-			customerOutputFile = new FileWriter("data/Customers.json");
-			customerOutputFile.write(gsonBuilderCustomer.toJson(customerMap));
-			customerOutputFile.close();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
 		return customerMap;
 	}
 	
 	public static Map<String, Product> getProductsData(String fileName, Map<String, Person> personMap) {
-		
 		// Read in and parse the products file to put them into objects
-//		List<Product> productList = new ArrayList<Product>();// ---------------> TODO:switch this to a hashMap
 		Map<String, Product> productMap = new HashMap<String, Product>();
 		Scanner productsFile = null;
 
@@ -171,20 +139,6 @@ public class FileReader {
 			}
 		}
 		productsFile.close();
-
-		// Converting product array list to prettyPrinting JSON format
-		Gson gsonBuilderProduct = new GsonBuilder().setPrettyPrinting().create();
-		FileWriter productOutputFile = null;
-		try {
-			productOutputFile = new FileWriter("data/Products.json");
-			productOutputFile.write(gsonBuilderProduct.toJson(productMap));
-			productOutputFile.close();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
 		return productMap;
-		
 	}
-
 }

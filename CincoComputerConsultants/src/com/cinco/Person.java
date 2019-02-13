@@ -7,15 +7,17 @@
 
 package com.cinco;
 
+import java.util.ArrayList;
+
 public class Person {
 
 	protected String personUuid;
 	protected String lastName;
 	protected String firstName;
 	protected Address address;
-	protected String email;
+	protected ArrayList<String> email;
 
-	public Person(String personUuid, String lastName, String firstName, Address address, String email) {
+	public Person(String personUuid, String lastName, String firstName, Address address, ArrayList<String> email) {
 		this.personUuid = personUuid;
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -39,7 +41,7 @@ public class Person {
 		return this.firstName + ", " + this.lastName;
 	}
 
-	public String getEmail() {
+	public ArrayList<String> getEmail() {
 		return email;
 	}
 
