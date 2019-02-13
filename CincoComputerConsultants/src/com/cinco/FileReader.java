@@ -14,11 +14,7 @@ import com.google.gson.GsonBuilder;
 public class FileReader {
 	
 	public FileReader(){}
-	
-	
-	
-	
-	
+
 	public Map<String, Person> getPersonsFile(String fileName) {
 		/**
 		 * HashMap for the persons object to create key value pairs with personUuid in
@@ -56,27 +52,10 @@ public class FileReader {
 			personMap.put(personUuid, p);
 		}
 		personFile.close();
-
-		// Converting personMap to prettyPrinting JSON format
-//		Gson gsonBuilderPerson = new GsonBuilder().setPrettyPrinting().create();
-//		FileWriter personsOutputFile = null;
-//		try {
-//			personsOutputFile = new FileWriter("data/Persons.json");
-//			personsOutputFile.write(gsonBuilderPerson.toJson(personMap));
-//			personsOutputFile.close();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-		// ---------> TODO: now that we are done with phase1 I don't think we need this
-		// anymore
-
 		return personMap;
 	}
-
-	
 	
 	public Map<String, Customer> getCustomersFile(String fileName, Map<String, Person> personMap) {
-		
 
 		// Read in and parse the customers file to put them into objects
 //		List<Customer> customerList = new ArrayList<Customer>(); //-----------> TODO: switch this to a hashmap.
@@ -113,18 +92,6 @@ public class FileReader {
 			}
 		}
 		customerFile.close();
-
-		// Converting customer array list to prettyPrinting JSON format
-		Gson gsonBuilderCustomer = new GsonBuilder().setPrettyPrinting().create();
-		FileWriter customerOutputFile = null;
-		try {
-			customerOutputFile = new FileWriter("data/Customers.json");
-			customerOutputFile.write(gsonBuilderCustomer.toJson(customerMap));
-			customerOutputFile.close();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
 		return customerMap;
 	}
 	
@@ -171,20 +138,6 @@ public class FileReader {
 			}
 		}
 		productsFile.close();
-
-		// Converting product array list to prettyPrinting JSON format
-		Gson gsonBuilderProduct = new GsonBuilder().setPrettyPrinting().create();
-		FileWriter productOutputFile = null;
-		try {
-			productOutputFile = new FileWriter("data/Products.json");
-			productOutputFile.write(gsonBuilderProduct.toJson(productMap));
-			productOutputFile.close();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
 		return productMap;
-		
 	}
-
 }
