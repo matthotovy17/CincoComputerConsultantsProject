@@ -2,8 +2,6 @@ package com.cinco;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,7 +57,6 @@ public class FileReader {
 	}
   
 	
-
 	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the customers file to put them into objects
 		Map<String, Customer> customerMap = new HashMap<String, Customer>();
