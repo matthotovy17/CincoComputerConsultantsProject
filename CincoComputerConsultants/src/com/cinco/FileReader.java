@@ -9,14 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class FileReader {
 	
 	public FileReader(){}
-
-	public Map<String, Person> getPersonsFile(String fileName) {
+	
+	public static Map<String, Person> getPersonsData(String fileName) {
 		/**
 		 * HashMap for the persons object to create key value pairs with personUuid in
 		 * order for the customer object to find the corresponding person object
@@ -60,17 +57,17 @@ public class FileReader {
 		personFile.close();
 		return personMap;
 	}
+  
 	
-	public Map<String, Customer> getCustomersFile(String fileName, Map<String, Person> personMap) {
 
+	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the customers file to put them into objects
-//		List<Customer> customerList = new ArrayList<Customer>(); //-----------> TODO: switch this to a hashmap.
 		Map<String, Customer> customerMap = new HashMap<String, Customer>();
 		Scanner customerFile = null;
 
 		// Open file and set customer file to scanner
 		try {
-			customerFile = new Scanner(new File("data/Customers.dat"));
+			customerFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
@@ -101,16 +98,14 @@ public class FileReader {
 		return customerMap;
 	}
 	
-	public Map<String, Product> getProductsFile(String fileName, Map<String, Person> personMap) {
-		
+	public static Map<String, Product> getProductsData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the products file to put them into objects
-//		List<Product> productList = new ArrayList<Product>();// ---------------> TODO:switch this to a hashMap
 		Map<String, Product> productMap = new HashMap<String, Product>();
 		Scanner productsFile = null;
 
 		// Open file and set product file to scanner
 		try {
-			productsFile = new Scanner(new File("data/Products.dat"));
+			productsFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}

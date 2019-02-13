@@ -21,5 +21,8 @@ import java.io.IOException;
 
 public class DataConverter {
 
+	Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");
+	Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
+	Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
 
 }
