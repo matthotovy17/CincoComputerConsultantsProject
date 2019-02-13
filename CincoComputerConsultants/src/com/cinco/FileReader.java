@@ -19,7 +19,7 @@ public class FileReader {
 	
 	
 	
-	public Map<String, Person> getPersonsFile(String fileName) {
+	public static Map<String, Person> getPersonsData(String fileName) {
 		/**
 		 * HashMap for the persons object to create key value pairs with personUuid in
 		 * order for the customer object to find the corresponding person object
@@ -75,7 +75,7 @@ public class FileReader {
 
 	
 	
-	public Map<String, Customer> getCustomersFile(String fileName, Map<String, Person> personMap) {
+	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
 		
 
 		// Read in and parse the customers file to put them into objects
@@ -85,7 +85,7 @@ public class FileReader {
 
 		// Open file and set customer file to scanner
 		try {
-			customerFile = new Scanner(new File("data/Customers.dat"));
+			customerFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
@@ -128,7 +128,7 @@ public class FileReader {
 		return customerMap;
 	}
 	
-	public Map<String, Product> getProductsFile(String fileName, Map<String, Person> personMap) {
+	public static Map<String, Product> getProductsData(String fileName, Map<String, Person> personMap) {
 		
 		// Read in and parse the products file to put them into objects
 //		List<Product> productList = new ArrayList<Product>();// ---------------> TODO:switch this to a hashMap
@@ -137,7 +137,7 @@ public class FileReader {
 
 		// Open file and set product file to scanner
 		try {
-			productsFile = new Scanner(new File("data/Products.dat"));
+			productsFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
