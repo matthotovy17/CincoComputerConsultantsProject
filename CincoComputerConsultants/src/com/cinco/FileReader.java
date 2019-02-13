@@ -57,7 +57,6 @@ public class FileReader {
 	}
   
 	
-
 	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the customers file to put them into objects
 		Map<String, Customer> customerMap = new HashMap<String, Customer>();
