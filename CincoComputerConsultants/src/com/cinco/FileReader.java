@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -42,10 +43,15 @@ public class FileReader {
 			String firstName = name[1];
 			String addr[] = tokens[2].split(",");
 			Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
+			ArrayList<String> email = new ArrayList<String>();
 			if (tokens.length != 4) {
-				p = new Person(personUuid, lastName, firstName, address, "");
+				email.add("");
+				p = new Person(personUuid, lastName, firstName, address, email);
 			} else {
-				String email = tokens[3];
+				String emails[] = tokens[3].split(",");
+				for(int j = 0; j < emails.length; j++) {
+					email.add(emails[j]);
+				}
 				p = new Person(personUuid, lastName, firstName, address, email);
 			}
 			// Map key value pairs
