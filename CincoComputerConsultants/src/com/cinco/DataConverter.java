@@ -10,8 +10,6 @@ package com.cinco;
 
 import java.util.Map;
 
-
-
 public class DataConverter {
 
 	Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");

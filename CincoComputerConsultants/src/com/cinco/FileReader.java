@@ -130,7 +130,6 @@ public class FileReader {
 					hourlyFee = Double.parseDouble(tokens[4]);
 					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); // type
 				}
-//				productList.add(p);
 				productMap.put(productUuid, p);
 			}
 		}

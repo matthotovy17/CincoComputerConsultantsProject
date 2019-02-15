@@ -1,0 +1,22 @@
+public static Map<String, Invoice> getInvoiceData(String fileName, Map<String, Invoice> invoiceMap) {
+	Map<String, Invoice> invoiceMap = new HashMap<String, Invoice>();
+	Scanner invoiceFile = null;
+	
+	try {
+		invoiceFile = new Scanner(new File(filename));
+	} catch (FileNotFoundException e) {
+		throw new RuntimeException(e);
+	}
+	
+	int numInvoiceFileLines = Integer.parseInt(invoiceFile.nextLine());
+	for (int i = 0; i < numInvoiceFileLines; i++) {
+			String line = invoiceFile.nextLine();
+			if (!line.trim().isEmpty()) {
+				Invoice i = null;
+				String tokens[] = line.split(";");
+				String invoiceUuid = tokens[0];
+				String customerCode = tokens[1];
+				String personUuid = tokens[2];
+				double pricePerUnit
+				// double billableHours
+}
