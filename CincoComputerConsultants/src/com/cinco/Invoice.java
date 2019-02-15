@@ -15,7 +15,6 @@ public class Invoice {
 	private String[] productUuid;
 	
 	public Invoice(String invoiceUuid, String customerUuid, String personUuid, String[] productUuid) {
-		super();
 		this.invoiceUuid = invoiceUuid;
 		this.customerUuid = customerUuid;
 		this.personUuid = personUuid;
@@ -38,8 +37,4 @@ public class Invoice {
 		return productUuid;
 	}
 	
-//	for(int j = 0; j < products.length; j ++) {
-//		String eachProduct[] = products[j].split(":");
-//	}
-
 }

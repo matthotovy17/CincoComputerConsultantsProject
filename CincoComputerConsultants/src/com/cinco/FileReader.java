@@ -156,9 +156,10 @@ public class FileReader {
 					Invoice inv = null;
 					String tokens[] = line.split(";");
 					String invoiceUuid = tokens[0];
-					String customerCode = tokens[1];
+					String customerUuid = tokens[1];
 					String personUuid = tokens[2];
 					String products[] = tokens[3].split(",");
+					inv = new Invoice(invoiceUuid, customerUuid, personUuid, products);
 					invoiceMap.put(invoiceUuid, inv);
 				}
 		}
