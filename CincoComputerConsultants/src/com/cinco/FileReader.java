@@ -138,4 +138,31 @@ public class FileReader {
 		productsFile.close();
 		return productMap;
 	}
+	
+	public static Map<String, Invoice> getInvoiceData(String fileName) {
+		Map<String, Invoice> invoiceMap = new HashMap<String, Invoice>();
+		Scanner invoiceFile = null;
+		
+		try {
+			invoiceFile = new Scanner(new File(fileName));
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+		
+		int numInvoiceFileLines = Integer.parseInt(invoiceFile.nextLine());
+		for (int i = 0; i < numInvoiceFileLines; i++) {
+				String line = invoiceFile.nextLine();
+				if (!line.trim().isEmpty()) {
+					Invoice inv = null;
+					String tokens[] = line.split(";");
+					String invoiceUuid = tokens[0];
+					String customerCode = tokens[1];
+					String personUuid = tokens[2];
+					String products[] = tokens[3].split(",");
+					invoiceMap.put(invoiceUuid, inv);
+				}
+		}
+		invoiceFile.close();
+		return invoiceMap;
+	}
 }
