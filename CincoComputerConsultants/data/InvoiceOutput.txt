@@ -1,0 +1,101 @@
+Executive Summary Report
+=========================
+Invoice   Customer                                          Salesperson                      Subtotal        Fees       Taxes       Total
+--------  --------                                         -------------                    ----------      ------     -------      ------
+INV001    Altavista                                         O'Brien, Miles                 $   632.12 $     275.00 $     0.00 $    906.12
+INV002    Cakewalk                                          Gekko, Gordon                  $    10.96 $       0.00 $     0.00 $   5511.43
+INV003    Borland                                           Fox, Bud                       $  7780.30 $   12275.00 $     0.00 $  20055.30
+INV004    Chami                                             Sveum, Dale                    $  4277.11 $    1000.00 $   242.28 $   5519.39
+INV005    Microsoft                                         Hartnell, William
+INV006    Apple Systems                                     Troughton, Patrick
+=========================================================================================================================================
+TOTALS
+
+
+
+
+
+Individual Invoice Detail Reports
+==================================================
+Invoice INV001
+========================
+Salesperson: O'Brien, Miles
+Customer Info:
+  Altavista (149j)
+  Baker, Tom
+  7695 Lakewood Gardens Terrace
+  Malpique Guangzhou 2250-325 Portugal
+-------------------------------------------------
+Code      Item                                                                         Fees       Total
+-----    ------                                                                       ------     ------- 
+a34e     Greyscale Organizer (2 units @ $140.56/unit)                           $      0.00 $    281.12
+94ka     Dog Bone Training (10.00 hours @ $35.00/hour)                          $    150.00 $    350.00
+======================================================                          =========================
+SUB-TOTALS                                                                      $    275.00 $    632.12
+COMPLIANCE FEE                                                                              $    125.00
+TAXES                                                                                       $      0.00
+TOTAL                                                                                       $    906.12
+
+
+XXXXXXXXXXX check through invoice 2 i think i did operations for a corporate customerXXXXXXXXXxxXXXXXXXXXXX
+
+Invoice INV002
+========================
+Salesperson: Gekko, Gordon
+Customer Info:
+  Cakewalk (ry5h)
+  Hurndall, Richard
+  6866 Petterle Street
+  Jinfeng China
+-------------------------------------------------
+Code      Item                                                                         Fees       Total
+-----    ------                                                                       ------     ------- 
+111a      Fone Registration (10.00 days @ $400.00/yr)                            $   5500.00 $    10.96
+======================================================                          =========================
+SUB-TOTALS                                                                       $   5625.00 $    10.96
+COMPLIANCE FEE                                                                               $   125.00
+TAXES                                                                                        $     0.00
+TOTAL                                                                                        $  5635.96
+
+
+
+Invoice INV003
+========================
+Salesperson: Fox, Bud
+Customer Info:
+  Borland (ttew)
+  McCoy,Sylvester
+  656 Vidon Center
+  Shenzhen China
+-------------------------------------------------
+Code      Item                                                                         Fees       Total
+-----    ------                                                                       ------     ------- 
+900g     Organizer Training (25.00 hrs @ $50.00/hr)                              $    150.00 $   1250.00
+1449     Dog Discs (3 units @  $1010.10/unit)                                    $      0.00 $   3030.30
+1p94     PlayByPlay Long Distance Service (365.00 days @ $3500.00/yr)            $  12000.00 $   3500.00
+======================================================                          =========================
+SUB-TOTALS                                                                       $  12275.00 $   7780.30
+COMPLIANCE FEE                                                                               $    125.00
+TAXES                                                                                        $      0.00
+TOTAL                                                                                        $  20055.30
+
+
+
+Invoice INV004
+========================
+Salesperson: Sveum, Dale
+Customer Info:
+  Chami (5xtt)
+  Eccleston, Chris
+  62 Dexter Hill
+  Tunal Peru
+-------------------------------------------------
+Code      Item                                                                         Fees       Total
+-----    ------                                                                       ------     ------- 
+f9f2     GreyScale Sound System (4 unit @ $549.99/unit)                          $     0.00 $   2199.96
+t5he     Happy Time (432.00 days @ $1755.00/yr)                                  $  1000.00 $   2077.15
+======================================================                          =========================
+SUB-TOTALS                                                                       $  1000.00 $   4277.11
+COMPLIANCE FEE                                                                              $      0.00
+TAXES                                                                                       $    242.28
+TOTAL                                                                                       $   5519.39

@@ -29,28 +29,30 @@ public class FileReader {
 		// Read through and parse the person data file and then put it into the object
 		int numPersonFileLines = Integer.parseInt(personFile.nextLine());
 		for (int i = 0; i < numPersonFileLines; i++) {
-			Person p = null;
 			String line = personFile.nextLine();
-			String tokens[] = line.split(";");
-			String personUuid = tokens[0];
-			String name[] = tokens[1].split(",");
-			String lastName = name[0];
-			String firstName = name[1];
-			String addr[] = tokens[2].split(",");
-			Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
-			ArrayList<String> email = new ArrayList<String>();
-			if (tokens.length != 4) {
-				email.add("");
-				p = new Person(personUuid, lastName, firstName, address, email);
-			} else {
-				String emails[] = tokens[3].split(",");
-				for(int j = 0; j < emails.length; j++) {
-					email.add(emails[j]);
+			if(!line.trim().isEmpty()) {
+				Person p = null;
+				String tokens[] = line.split(";");
+				String personUuid = tokens[0];
+				String name[] = tokens[1].split(",");
+				String lastName = name[0];
+				String firstName = name[1];
+				String addr[] = tokens[2].split(",");
+				Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
+				ArrayList<String> email = new ArrayList<String>();
+				if (tokens.length != 4) {
+					email.add("");
+					p = new Person(personUuid, lastName, firstName, address, email);
+				} else {
+					String emails[] = tokens[3].split(",");
+					for(int j = 0; j < emails.length; j++) {
+						email.add(emails[j]);
+					}
+					p = new Person(personUuid, lastName, firstName, address, email);
 				}
-				p = new Person(personUuid, lastName, firstName, address, email);
+				// Map key value pairs
+				personMap.put(personUuid, p);
 			}
-			// Map key value pairs
-			personMap.put(personUuid, p);
 		}
 		personFile.close();
 		return personMap;
