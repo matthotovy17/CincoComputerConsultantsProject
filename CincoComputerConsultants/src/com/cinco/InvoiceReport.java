@@ -1,5 +1,7 @@
 package com.cinco;
 
+import java.util.Map;
+
 public class InvoiceReport {
 
 	public static void main(String[] args) {
@@ -16,6 +18,16 @@ public class InvoiceReport {
 		
 		//3. follow the single responsiblilty principle 
 		// create classes for loading data, serializing data, 
+		
+		Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");
+		Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
+		Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
+		Map<String, Invoice> invoiceMap = FileReader.getInvoiceData("data/Invoices.dat");
+		
+		for(Map.Entry<String, Invoice> entry : invoiceMap.entrySet()) {
+			String key = entry.getKey();
+			
+		}
 
 	}
 

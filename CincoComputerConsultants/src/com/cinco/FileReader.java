@@ -122,15 +122,15 @@ public class FileReader {
 				// Read type and set parameters to corresponding product subclass
 				if (tokens[1].equals("E")) {
 					pricePerUnit = Double.parseDouble(tokens[3]);
-					p = new Equipment(productUuid, name, pricePerUnit); // type
+					p = new Equipment(productUuid, name, pricePerUnit);
 				} else if (tokens[1].equals("L")) {
 					annualLicenseFee = Double.parseDouble(tokens[3]);
 					serviceFee = Double.parseDouble(tokens[4]);
-					p = new License(productUuid, name, annualLicenseFee, serviceFee); // type
+					p = new License(productUuid, name, annualLicenseFee, serviceFee); 
 				} else if (tokens[1].equals("C")) {
 					consultantPersonUuid = personMap.get(tokens[3]);
 					hourlyFee = Double.parseDouble(tokens[4]);
-					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); // type
+					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); 
 				}
 				productMap.put(productUuid, p);
 			}

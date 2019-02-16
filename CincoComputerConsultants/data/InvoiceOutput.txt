@@ -2,15 +2,12 @@ Executive Summary Report
 =========================
 Invoice   Customer                                          Salesperson                      Subtotal        Fees       Taxes       Total
 --------  --------                                         -------------                    ----------      ------     -------      ------
-INV001    Altavista                                         O'Brien, Miles                 $   632.12 $     275.00 $     0.00 $    906.12
-INV002    Cakewalk                                          Gekko, Gordon                  $    10.96 $       0.00 $     0.00 $   5511.43
-INV003    Borland                                           Fox, Bud                       $  7780.30 $   12275.00 $     0.00 $  20055.30
-INV004    Chami                                             Sveum, Dale                    $  4277.11 $    1000.00 $   242.28 $   5519.39
-INV005    Microsoft                                         Hartnell, William
-INV006    Apple Systems                                     Troughton, Patrick
+INV001    Altavista                                         O'Brien, Miles                $    631.12 $     275.00 $     0.00 $    906.12
+INV002    Microsoft                                         Gekko, Gordon                 $    810.96 $    5500.00 $    34.47 $   6345.43
+INV003    Borland                                           Fox, Bud                      $   7780.30 $   12275.00 $     0.00 $  20055.30
+INV004    Chami                                             Sveum, Dale                   $   4277.11 $    1000.00 $   242.28 $   5519.39
 =========================================================================================================================================
-TOTALS
-
+TOTALS                                                                                    $  13499.49 $   19050.00 $   276.75 $  32826.24
 
 
 
@@ -31,31 +28,30 @@ Code      Item                                                                  
 a34e     Greyscale Organizer (2 units @ $140.56/unit)                           $      0.00 $    281.12
 94ka     Dog Bone Training (10.00 hours @ $35.00/hour)                          $    150.00 $    350.00
 ======================================================                          =========================
-SUB-TOTALS                                                                      $    275.00 $    632.12
+SUB-TOTALS                                                                      $    275.00 $    631.12
 COMPLIANCE FEE                                                                              $    125.00
 TAXES                                                                                       $      0.00
 TOTAL                                                                                       $    906.12
 
 
-XXXXXXXXXXX check through invoice 2 i think i did operations for a corporate customerXXXXXXXXXxxXXXXXXXXXXX
 
 Invoice INV002
 ========================
 Salesperson: Gekko, Gordon
 Customer Info:
-  Cakewalk (ry5h)
-  Hurndall, Richard
-  6866 Petterle Street
-  Jinfeng China
+  Microsoft (3l50)
+  Smith, Matt
+  306 Clemons Place
+  Jaguimitan 1664 Philippines
 -------------------------------------------------
 Code      Item                                                                         Fees       Total
 -----    ------                                                                       ------     ------- 
-111a      Fone Registration (10.00 days @ $400.00/yr)                            $   5500.00 $    10.96
+111a      Fone Registration (740.00 days @ $400.00/yr)                           $   5500.00 $   810.96
 ======================================================                          =========================
-SUB-TOTALS                                                                       $   5625.00 $    10.96
-COMPLIANCE FEE                                                                               $   125.00
-TAXES                                                                                        $     0.00
-TOTAL                                                                                        $  5635.96
+SUB-TOTALS                                                                       $   5500.00 $   810.96
+COMPLIANCE FEE                                                                               $     0.00
+TAXES                                                                                        $    34.47
+TOTAL                                                                                        $  6345.43
 
 
 
@@ -64,7 +60,7 @@ Invoice INV003
 Salesperson: Fox, Bud
 Customer Info:
   Borland (ttew)
-  McCoy,Sylvester
+  McCoy, Sylvester
   656 Vidon Center
   Shenzhen China
 -------------------------------------------------

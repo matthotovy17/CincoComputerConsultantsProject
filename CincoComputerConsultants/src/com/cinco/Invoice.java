@@ -38,6 +38,7 @@ public class Invoice {
 		return productUuid;
 	}
 	
+	
 //	for(int j = 0; j < products.length; j ++) {
 //		String eachProduct[] = products[j].split(":");
 //	}
