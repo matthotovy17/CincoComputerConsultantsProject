@@ -9,9 +9,9 @@ package com.cinco;
 
 public class GovernmentCustomer extends Customer {
 
-	public GovernmentCustomer(String customerCode, Person primaryContactUuid, String name,
+	public GovernmentCustomer(String customerUuid, Person primaryContactUuid, String name,
 			Address address) {
-		super(customerCode, primaryContactUuid, name, address);
+		super(customerUuid, primaryContactUuid, name, address);
 	}
 	
 	public String getType() {

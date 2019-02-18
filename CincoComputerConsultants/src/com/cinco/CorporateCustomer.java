@@ -9,9 +9,9 @@ package com.cinco;
 
 public class CorporateCustomer extends Customer {
 
-	public CorporateCustomer(String customerCode, Person primaryContactUuid, String name,
+	public CorporateCustomer(String customerUuid, Person primaryContactUuid, String name,
 			Address address) {
-		super(customerCode, primaryContactUuid, name, address);
+		super(customerUuid, primaryContactUuid, name, address);
 	}
 	
 	public String getType() {
