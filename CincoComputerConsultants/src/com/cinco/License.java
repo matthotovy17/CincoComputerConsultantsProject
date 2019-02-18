@@ -7,13 +7,11 @@ public class License extends Product {
 
 	private double annualLicenseFee;
 	private double serviceFee;
-	private int effectiveDays;
 
-	public License(String productUuid, String name, double annualLicenseFee, double serviceFee, int effectiveDays) {
+	public License(String productUuid, String name, double annualLicenseFee, double serviceFee) {
 		super(productUuid, name); 
 		this.annualLicenseFee = annualLicenseFee;
 		this.serviceFee = serviceFee;
-		this.effectiveDays = effectiveDays;
 	}
 	
 	//Copy constructor
@@ -21,16 +19,8 @@ public class License extends Product {
 		super(l.getProductUuid(), l.getName());
 		annualLicenseFee = l.annualLicenseFee;
 		serviceFee = l.serviceFee;
-		effectiveDays = l.effectiveDays;
 	}
 	
-	//Copy constructor that changes the number of effective days.
-	public License(License l, int effectiveDays) {
-		super(l.getProductUuid(), l.getName());
-		annualLicenseFee = l.annualLicenseFee;
-		serviceFee = l.serviceFee;
-		this.effectiveDays = effectiveDays;
-	}
 	
 	public String getType() {
 		return "License";

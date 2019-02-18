@@ -19,13 +19,13 @@ public class Consultation extends Product {
 		this.hourlyFee = hourlyFee;
 	}
 	
-//	//copy constructor
-//	public Consultation(Consultation c) {
-//		super(c.getProductUuid(), c.getName());
-//		consultantPersonUuid = c.consultantPersonUuid;
-//		hourlyFee = c.hourlyFee;
-//	}
-//	
+	//copy constructor
+	public Consultation(Consultation c) {
+		super(c.getProductUuid(), c.getName());
+		consultantPersonUuid = c.consultantPersonUuid;
+		hourlyFee = c.hourlyFee;
+	}
+	
 	public String getType() {
 		return "Consultation";
 	}

@@ -9,11 +9,11 @@ public class Equipment extends Product {
 		this.pricePerUnit = pricePerUnit;
 	}
 	
-//	//copy constructor
-//	public Equipment(Equipment e) {
-//		super(e.getProductUuid(), e.getName());
-//		pricePerUnit = e.pricePerUnit;
-//	}
+	//copy constructor
+	public Equipment(Equipment e) {
+		super(e.getProductUuid(), e.getName());
+		pricePerUnit = e.pricePerUnit;
+	}
 	
 	public String getType() {
 		return "Equipment";
