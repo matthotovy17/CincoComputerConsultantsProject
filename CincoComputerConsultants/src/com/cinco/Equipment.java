@@ -4,10 +4,16 @@ public class Equipment extends Product {
 
 	private double pricePerUnit;
 
-	public Equipment(String uuid, String name, double pricePerUnit) { //String type
-		super(uuid, name); //type
+	public Equipment(String productUuid, String name, double pricePerUnit) { 
+		super(productUuid, name);
 		this.pricePerUnit = pricePerUnit;
 	}
+	
+//	//copy constructor
+//	public Equipment(Equipment e) {
+//		super(e.getProductUuid(), e.getName());
+//		pricePerUnit = e.pricePerUnit;
+//	}
 	
 	public String getType() {
 		return "Equipment";

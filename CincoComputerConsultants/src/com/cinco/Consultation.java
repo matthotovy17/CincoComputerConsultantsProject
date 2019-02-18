@@ -9,21 +9,28 @@ package com.cinco;
 
 public class Consultation extends Product {
 
-	private Person consultantPersonCode;
+	private Person consultantPersonUuid;
 	private double hourlyFee;
 
-	public Consultation(String productUuid, String name, Person consultantPersonCode, double hourlyFee) { //String type
-		super(productUuid, name);//type
-		this.consultantPersonCode = consultantPersonCode;
+	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) { 
+		super(productUuid, name);
+		this.consultantPersonUuid = consultantPersonUuid;
 		this.hourlyFee = hourlyFee;
 	}
 	
+//	//copy constructor
+//	public Consultation(Consultation c) {
+//		super(c.getProductUuid(), c.getName());
+//		consultantPersonUuid = c.consultantPersonUuid;
+//		hourlyFee = c.hourlyFee;
+//	}
+//	
 	public String getType() {
 		return "Consultation";
 	}
 
-	public Person getConsultantPersonCode() {
-		return consultantPersonCode;
+	public Person getConsultantPersonUuid() {
+		return consultantPersonUuid;
 	}
 
 	public double getHourlyFee() {

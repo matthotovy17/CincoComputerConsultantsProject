@@ -9,21 +9,21 @@ package com.cinco;
 
 public abstract class Customer {
 
-	protected String customerCode;
+	protected String customerUuid;
 	protected Person primaryContactUuid;
 	protected String name;
 	protected Address address;
 
-	public Customer(String customerCode, Person primaryContactUuid, String name, Address address) {
+	public Customer(String customerUuid, Person primaryContactUuid, String name, Address address) {
 		super();
-		this.customerCode = customerCode;
+		this.customerUuid = customerUuid;
 		this.primaryContactUuid = primaryContactUuid;
 		this.name = name;
 		this.address = address;
 	}
 
-	public String getCustomerCode() {
-		return customerCode;
+	public String getCustomerUuid() {
+		return customerUuid;
 	}
 
 	public Person getPrimaryContactUuid() {
@@ -40,4 +40,5 @@ public abstract class Customer {
 	
 	public abstract double getComplianceFee();
 	public abstract String getType();
+	public abstract double getTaxRate();
 }

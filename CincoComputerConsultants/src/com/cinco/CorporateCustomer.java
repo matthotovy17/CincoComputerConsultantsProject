@@ -21,5 +21,9 @@ public class CorporateCustomer extends Customer {
 	public double getComplianceFee() {
 		return 0.00;
 	}
+	
+	public double getTaxRate() {
+		return .0425;
+	}
 
 }

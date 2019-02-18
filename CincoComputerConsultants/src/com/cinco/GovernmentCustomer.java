@@ -21,4 +21,10 @@ public class GovernmentCustomer extends Customer {
 	public double getComplianceFee() {
 		return 125.00;
 	}
+	
+	public double getTaxRate() {
+		return 0.00;
+	}
 }
+
+
