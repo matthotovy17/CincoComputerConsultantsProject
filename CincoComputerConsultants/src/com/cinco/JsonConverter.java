@@ -1,15 +1,19 @@
 package com.cinco;
-public class JsonConverter {
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class JsonConverter<T> {
 	
-	// TODO: Converting Map to prettyPrinting JSON format
-	public void toJson() {
-		// parameterize the toJson method
+	public void toJson(String fileName, Map<String, ?> map) {
 		Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();
 		FileWriter outputFile = null;
 		try {
-			outputFile = new FileWriter("data/Persons.json");
-			outputFile.write(gsonBuilder.toJson());
-			// TODO: pass in Map to toJson function
+			outputFile = new FileWriter(fileName);
+			outputFile.write(gsonBuilder.toJson(map));
 			outputFile.close();
 		} catch (IOException e1) {
 			e1.printStackTrace();

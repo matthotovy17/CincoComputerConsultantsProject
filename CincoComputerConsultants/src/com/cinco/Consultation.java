@@ -9,12 +9,12 @@ package com.cinco;
 
 public class Consultation extends Product {
 
-	private Person consultantPersonCode;
+	private Person consultantPersonUuid;
 	private double hourlyFee;
 
 	public Consultation(String productUuid, String name, Person consultantPersonCode, double hourlyFee) { //String type
 		super(productUuid, name);//type
-		this.consultantPersonCode = consultantPersonCode;
+		this.consultantPersonUuid = consultantPersonCode;
 		this.hourlyFee = hourlyFee;
 	}
 	
@@ -22,8 +22,8 @@ public class Consultation extends Product {
 		return "Consultation";
 	}
 
-	public Person getConsultantPersonCode() {
-		return consultantPersonCode;
+	public Person getConsultantPersonUuid() {
+		return consultantPersonUuid;
 	}
 
 	public double getHourlyFee() {
