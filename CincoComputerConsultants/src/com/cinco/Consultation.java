@@ -12,6 +12,7 @@ public class Consultation extends Product {
 	private Person consultantPersonUuid;
 	private double hourlyFee;
 
+
 	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) { 
 		super(productUuid, name);
 		this.consultantPersonUuid = consultantPersonUuid;

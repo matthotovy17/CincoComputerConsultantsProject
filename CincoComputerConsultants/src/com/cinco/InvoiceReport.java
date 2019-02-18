@@ -29,6 +29,10 @@ public class InvoiceReport {
 			
 		}
 
+//XXXXXXXXXXXXX maybe instead of using a copy constructor for the invoice extra piece of data on
+//XXXXXXXXXXXXX we can make transaction classes for each product and given the extra piece of data
+//XXXXXXXXXXX   and the map we can use the piece of data as well as store the piece of data.
+
 	}
 
 }
