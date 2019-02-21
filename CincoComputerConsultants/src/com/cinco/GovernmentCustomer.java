@@ -9,22 +9,19 @@ package com.cinco;
 
 public class GovernmentCustomer extends Customer {
 
-	public GovernmentCustomer(String customerUuid, Person primaryContactUuid, String name,
-			Address address) {
+	public GovernmentCustomer(String customerUuid, Person primaryContactUuid, String name, Address address) {
 		super(customerUuid, primaryContactUuid, name, address);
 	}
-	
+
 	public String getType() {
 		return "Government";
 	}
 
-	public double getComplianceFee() {
+	public double getComplianceFee() { // Government customers have a $125 compliance fee per invoice
 		return 125.00;
 	}
-	
-	public double getTaxRate() {
+
+	public double getSalesTax() {
 		return 0.00;
 	}
 }
-
-

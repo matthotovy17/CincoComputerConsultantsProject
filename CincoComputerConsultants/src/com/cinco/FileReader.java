@@ -158,8 +158,8 @@ public class FileReader {
 					String invoiceUuid = tokens[0];
 					String customerUuid = tokens[1];
 					String personUuid = tokens[2];
-					String products[] = tokens[3].split(",");
-					inv = new Invoice(invoiceUuid, customerUuid, personUuid, products);
+					String productList[] = tokens[3].split(",");
+					inv = new Invoice(invoiceUuid, customerUuid, personUuid, productList);
 					invoiceMap.put(invoiceUuid, inv);
 				}
 		}

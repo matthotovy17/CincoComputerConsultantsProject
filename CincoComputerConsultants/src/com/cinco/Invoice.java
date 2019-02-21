@@ -7,18 +7,18 @@
 
 package com.cinco;
 
-public class Invoice {
+public abstract class Invoice extends Transaction implements Billable {
 	
 	private String invoiceUuid;
 	private String customerUuid;
 	private String personUuid;
-	private String[] productUuid;
+	private String[] productList;
 	
-	public Invoice(String invoiceUuid, String customerUuid, String personUuid, String[] productUuid) {
+	public Invoice(String invoiceUuid, String customerUuid, String personUuid, String[] productList) {
 		this.invoiceUuid = invoiceUuid;
 		this.customerUuid = customerUuid;
 		this.personUuid = personUuid;
-		this.productUuid = productUuid;
+		this.productList = productList;
 	}
 
 	public String getInvoiceUuid() {
@@ -33,8 +33,14 @@ public class Invoice {
 		return personUuid;
 	}
 
-	public String[] getProductUuid() {
-		return productUuid;
+	public String[] getProductList() {
+		return productList;
 	}
+	
+//	public abstract double getTotal();
+//	public abstract double getSubTotal();
+//	public abstract double getSumTaxes(); Once again not sure where to implement these methods.
+//	public abstract double getSumFees();
+//	
 	
 }

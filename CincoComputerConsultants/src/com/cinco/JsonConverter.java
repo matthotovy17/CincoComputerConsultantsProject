@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class JsonConverter<T> {
-	
+
 	public void toJson(String fileName, Map<String, ?> map) {
 		Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();
 		FileWriter outputFile = null;
@@ -18,6 +18,6 @@ public class JsonConverter<T> {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 	}
 }

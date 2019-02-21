@@ -37,4 +37,21 @@ public class Consultation extends Product {
 	public double getHourlyFee() {
 		return hourlyFee;
 	}
+	
+	public double getTaxRate() {
+		return .0425;
+	}
+	
+	public double getServiceFee() {
+		return 150.00;
+	}
+	
+	public double getProductCost() {
+		return this.getHourlyFee();
+	}
+	
+	//TODO: since consultation has an included service fee were other products may not when we do get fees we will want to add the service fee
+	//      and any other additional fees that may be included.
+
 }
+ 

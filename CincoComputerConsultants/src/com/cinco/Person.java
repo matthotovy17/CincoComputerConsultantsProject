@@ -28,6 +28,10 @@ public class Person {
 	public String getPersonUuid() {
 		return personUuid;
 	}
+	
+	public String getName() {
+		return this.lastName + ", " + this.firstName;
+	}
 
 	public String getLastName() {
 		return lastName;
@@ -35,10 +39,6 @@ public class Person {
 
 	public String getFirstName() {
 		return firstName;
-	}
-
-	public String getName() {
-		return this.firstName + ", " + this.lastName;
 	}
 
 	public ArrayList<String> getEmail() {

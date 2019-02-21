@@ -9,19 +9,18 @@ public class License extends Product {
 	private double serviceFee;
 
 	public License(String productUuid, String name, double annualLicenseFee, double serviceFee) {
-		super(productUuid, name); 
+		super(productUuid, name);
 		this.annualLicenseFee = annualLicenseFee;
 		this.serviceFee = serviceFee;
 	}
-	
-	//Copy constructor
+
+	// Copy constructor
 	public License(License l) {
 		super(l.getProductUuid(), l.getName());
 		annualLicenseFee = l.annualLicenseFee;
 		serviceFee = l.serviceFee;
 	}
-	
-	
+
 	public String getType() {
 		return "License";
 	}
@@ -33,16 +32,20 @@ public class License extends Product {
 	public double getServiceFee() {
 		return serviceFee;
 	}
-	
-	public int getEffectiveDays() {
-		return effectiveDays;
+
+	public int getEffectiveDays(LocalDate beginDate, LocalDate endDate) {
+		return (int) ChronoUnit.DAYS.between(beginDate, endDate);
+		// Eventually we will have to account for a leap year in the mix.
+		//TODO: this code needs to be moved to our product data class/object not here
+
+	}
+
+	public double getTaxRate() {
+		return .0425;
 	}
 	
-	public int getEffectiveDays(LocalDate a, LocalDate b) {
-		return (int) ChronoUnit.DAYS.between(a, b);
-		//Eventually we will have to account for a leap year in the mix.
-		
+	public double getProductCost() {
+		return this.getAnnualLicenseFee();
 	}
-	
 
 }
