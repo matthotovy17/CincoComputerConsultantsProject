@@ -1,5 +1,10 @@
 package com.cinco;
 
+import java.time.format.DateTimeFormatter;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+
 public class EffectiveDays {
 	
 	public static int getEffectiveDays(String beginDate, String endDate) {
@@ -14,9 +19,12 @@ public class EffectiveDays {
 		int endYear = Integer.parseInt(end[0]);
 		int endMonth = Integer.parseInt(end[1]);
 		int endDay = Integer.parseInt(end[2]);
+
+		DateTime dt = new DateTime();
+		DateTime dtLondon = dt.DateTimeFormatter.ofPattern("M/d/yyyy HH:mm").withZone(DateTimeZone.forID("Europe/London"));
 		
-		
-		
+//		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("M/d/yyyy HH:mm").withZone(DateTimeZone.forID("Europe/Dublin"));
+
 		return effectiveDays;
 	}
 
