@@ -31,7 +31,7 @@ public class InvoiceReport {
 		System.out.println("Executive Summary Report \n=========================");
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(String.format("%-8s %-8s %-20s %-15s %-8s %-8s %-8s\n", "Invoice", "Customer", "SalesPerson",
+		sb.append(String.format("%-8s %-30s %-30s %-16s %-16s %-16s %-16s\n", "Invoice", "Customer", "SalesPerson",
 				"Subtotal", "Fees", "Taxes", "Total"));
 		
 		double subTotal = 0.00, fees = 0.00, taxes = 0.00, total = 0.00;
@@ -59,18 +59,18 @@ public class InvoiceReport {
 			sumTaxes += taxes;
 			sumTotal += total;
 			
-			sb.append(String.format("%-8s %-8s %-20s %-15.2f %-8.2f %-8.2f %-8.2f\n", inv.getInvoiceUuid(), c.getName(),
+			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(), c.getName(),
 					p.getName(), subTotal, fees, taxes, total));
-			System.out.println(sb);
+//			System.out.println(sb);
 
 		}
 		
-//		sb.append("===================================================================="
-//				+ "=====================================================================\n");
-//		sb.append(String.format("TOTALS %-50.2f %-8.2f %-8.2f %-8.2f\n", sumSubTotal, sumFees, sumTaxes, sumTotal));
-//
-//		
-//		System.out.println(sb);
+		sb.append("===================================================================="
+				+ "=====================================================================\n");
+		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes, sumTotal));
+
+		
+		System.out.println(sb);
 
 	}
 
@@ -80,14 +80,3 @@ public class InvoiceReport {
 //	}
 
 }
-
-// TODO: Just a thought for when I am using this class in the invoice report we
-// are able to use its methods by doing
-// Transaction t = new Transaction();
-//
-// double total = t.getTotal();
-//
-// by using this we should be able to just call this method and maybe give it
-// the specific customer, Product, and invoice
-// object to be able to return the total and from there we are able to get the
-// total for that product.
