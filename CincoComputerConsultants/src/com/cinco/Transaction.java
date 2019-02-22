@@ -1,13 +1,17 @@
 package com.cinco;
 
 public class Transaction {
-
-	public double getFees(Customer c, Product p) {
-		return (p.getServiceFee() + c.getComplianceFee());
+	
+	public Transaction() {
+		
 	}
 
 	public double getSubTotal(Product p, ProductList pl) {
 		return (pl.getInvoiceProductData() * p.getProductCost());
+	}
+	
+	public double getFees(Customer c, Product p) {
+		return (p.getServiceFee() + c.getComplianceFee());
 	}
 
 	public double getTaxes(Product p, Customer c, ProductList pl) {

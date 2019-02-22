@@ -9,6 +9,10 @@ public class ProductList {
 		this.productUuid = productUuid;
 		this.invoiceProductData = invoiceProductData;
 	}
+	
+	public ProductList() {
+		
+	}
 
 	public String getProductUuid() {
 		return productUuid;
