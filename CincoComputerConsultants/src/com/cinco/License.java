@@ -23,13 +23,6 @@ public class License extends Product {
 		return serviceFee;
 	}
 
-//	public int getEffectiveDays(LocalDate beginDate, LocalDate endDate) {
-//		return (int) ChronoUnit.DAYS.between(beginDate, endDate);
-//		// Eventually we will have to account for a leap year in the mix.
-//		//TODO: this code needs to be moved to our product data class/object not here
-//
-//	}
-
 	// Licenses have a 4.25% tax rate
 	public double getTaxRate() {
 		return .0425;
