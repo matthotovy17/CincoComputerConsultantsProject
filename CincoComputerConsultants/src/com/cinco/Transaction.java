@@ -8,15 +8,15 @@ public class Transaction {
 		return (p.getServiceFee() + c.getComplianceFee());
 	}
 
-	public double getSubTotal(Product p, ProductData d) { // ProductData needs to be our added method to hold extra					// product data from the invoice file
+	public double getSubTotal(Product p, ProductList d) { // ProductData needs to be our added method to hold extra					// product data from the invoice file
 		return (d.getProductData() * p.getProductCost());
 	}
 
-	public double getTaxes(Product p, Customer c, ProductData d) {
+	public double getTaxes(Product p, Customer c, ProductList d) {
 		return ((p.getTaxRate() * c.getSalesTax()) * this.getSubTotal(p, d));
 	}
 
-	public double getTotal(Product p, Customer c, ProductData d) {
+	public double getTotal(Product p, Customer c, ProductList d) {
 		return (this.getTaxes(p, c, d) + this.getSubTotal(p, d) + this.getFees(c, p));
 	}
 
