@@ -25,7 +25,7 @@ public class License extends Product {
 	public double getServiceFee() {
 		return serviceFee;
 	}
-	
+
 //	public int getEffectiveDays(LocalDate beginDate, LocalDate endDate) {
 //		return (int) ChronoUnit.DAYS.between(beginDate, endDate);
 //		// Eventually we will have to account for a leap year in the mix.
@@ -37,7 +37,7 @@ public class License extends Product {
 	public double getTaxRate() {
 		return .0425;
 	}
-	
+
 	public double getProductCost() {
 		return this.getAnnualLicenseFee();
 	}
