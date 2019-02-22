@@ -28,7 +28,7 @@ public class Person {
 	public String getPersonUuid() {
 		return personUuid;
 	}
-	
+
 	public String getName() {
 		return this.lastName + ", " + this.firstName;
 	}

@@ -9,12 +9,6 @@ public class Equipment extends Product {
 		this.pricePerUnit = pricePerUnit;
 	}
 
-	// copy constructor
-	public Equipment(Equipment e) {
-		super(e.getProductUuid(), e.getName());
-		pricePerUnit = e.pricePerUnit;
-	}
-
 	public String getType() {
 		return "Equipment";
 	}
@@ -22,7 +16,7 @@ public class Equipment extends Product {
 	public double getPricePerUnit() {
 		return pricePerUnit;
 	}
-	
+
 	public double getProductCost() {
 		return this.getPricePerUnit();
 	}
@@ -35,8 +29,5 @@ public class Equipment extends Product {
 	public double getServiceFee() {
 		return 0.00;
 	}
-
-	// eventualy we will have the total cost which we will need a total cost
-	// function that gets pricePerUnit * #OfUnits.
 
 }

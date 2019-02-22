@@ -9,13 +9,13 @@ package com.cinco;
 
 import java.util.ArrayList;
 
-public class Invoice extends Transaction implements Billable {
-	
+public class Invoice {
+
 	private String invoiceUuid;
 	private String customerUuid;
 	private String personUuid;
 	private ArrayList<ProductList> productList;
-	
+
 	public Invoice(String invoiceUuid, String customerUuid, String personUuid, ArrayList<ProductList> productList) {
 		this.invoiceUuid = invoiceUuid;
 		this.customerUuid = customerUuid;
@@ -38,11 +38,5 @@ public class Invoice extends Transaction implements Billable {
 	public ArrayList<ProductList> getProductList() {
 		return productList;
 	}
-	
-//	public abstract double getTotal();
-//	public abstract double getSubTotal();
-//	public abstract double getSumTaxes(); Once again not sure where to implement these methods.
-//	public abstract double getSumFees();
-//	
-	
+
 }

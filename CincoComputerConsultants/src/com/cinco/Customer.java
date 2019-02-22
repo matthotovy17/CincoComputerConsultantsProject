@@ -7,7 +7,7 @@
 
 package com.cinco;
 
-public abstract class Customer extends Transaction implements Billable {
+public abstract class Customer {
 
 	protected String customerUuid;
 	protected Person primaryContactUuid;
@@ -37,15 +37,10 @@ public abstract class Customer extends Transaction implements Billable {
 	public Address getAddress() {
 		return address;
 	}
-	
-//	public double getTotal() {
-//		
-//	}                             //Here I am just confused on how to implement these methods and am not sure where to put them.
-//	public double getSubTotal();
-//	public double getSumTaxes();
-//	public double getSumFees();
-	
+
 	public abstract double getComplianceFee();
+
 	public abstract String getType();
+
 	public abstract double getSalesTax();
 }
