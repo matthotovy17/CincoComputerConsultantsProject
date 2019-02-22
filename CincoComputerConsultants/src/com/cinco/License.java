@@ -1,8 +1,5 @@
 package com.cinco;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
 public class License extends Product {
 
 	private double annualLicenseFee;

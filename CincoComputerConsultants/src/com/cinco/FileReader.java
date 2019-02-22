@@ -142,15 +142,17 @@ public class FileReader {
 	}
 
 	public static Map<String, Invoice> getInvoiceData(String fileName) {
+		// Read in and parse the invoice file to put them into objects
 		Map<String, Invoice> invoiceMap = new HashMap<String, Invoice>();
 		Scanner invoiceFile = null;
-
+		// Open file and set invoice file to scanner
 		try {
 			invoiceFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
 
+		// Read through and parse the data file and then put it into the object
 		int numInvoiceFileLines = Integer.parseInt(invoiceFile.nextLine());
 		for (int i = 0; i < numInvoiceFileLines; i++) {
 			String line = invoiceFile.nextLine();
@@ -160,9 +162,15 @@ public class FileReader {
 				String invoiceUuid = tokens[0];
 				String customerUuid = tokens[1];
 				String personUuid = tokens[2];
+				// parse the invoice file on the different products and data
 				String productArray[] = tokens[3].split(",");
 				ProductList p = null;
 				ArrayList<ProductList> pl = new ArrayList<>();
+				/**
+				 *  reads through the products and data and parses the products to recognize whether 
+				 *  it is a license or equipment/consultation in order to store the data
+				 *  in an arrayList
+				 */
 				for(int j = 0; j < productArray.length; j++) {
 					String productDataList[] = productArray[j].split(":");
 					if(productDataList.length == 2) {
