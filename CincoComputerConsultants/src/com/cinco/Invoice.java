@@ -7,14 +7,16 @@
 
 package com.cinco;
 
-public abstract class Invoice extends Transaction implements Billable {
+import java.util.ArrayList;
+
+public class Invoice extends Transaction implements Billable {
 	
 	private String invoiceUuid;
 	private String customerUuid;
 	private String personUuid;
-	private String[] productList;
+	private ArrayList<ProductList> productList;
 	
-	public Invoice(String invoiceUuid, String customerUuid, String personUuid, String[] productList) {
+	public Invoice(String invoiceUuid, String customerUuid, String personUuid, ArrayList<ProductList> productList) {
 		this.invoiceUuid = invoiceUuid;
 		this.customerUuid = customerUuid;
 		this.personUuid = personUuid;
@@ -33,7 +35,7 @@ public abstract class Invoice extends Transaction implements Billable {
 		return personUuid;
 	}
 
-	public String[] getProductList() {
+	public ArrayList<ProductList> getProductList() {
 		return productList;
 	}
 	
