@@ -34,8 +34,7 @@ public class InvoiceReport {
 		sb.append(String.format("%-8s %-30s %-30s %-16s %-16s %-16s %-16s\n", "Invoice", "Customer", "SalesPerson",
 				"Subtotal", "Fees", "Taxes", "Total"));
 		
-		double subTotal = 0.00, fees = 0.00, taxes = 0.00, total = 0.00;
-		double sumSubTotal = 0.00, sumFees = 0.00, sumTaxes = 0.00, sumTotal = 0.00;
+		double sumSubTotal = 0.00, sumFees = 0.00, sumTaxes = 0.00, sumTotal = 0.00, sumComplianceFee = 0.0;
 		Invoice inv;// = null;
 		Customer c;// = null;
 		Person p;// = null;
@@ -45,29 +44,33 @@ public class InvoiceReport {
 			inv = invoiceMap.get(key);
 			c = customerMap.get(inv.getCustomerUuid());
 			p = personMap.get(inv.getPersonUuid());
+			double subTotal = 0.00, serviceFees = 0.00, taxes = 0.00, total = 0.00, complianceFee = 0.00;
 			for (ProductList pl : inv.getProductList()) {
 				Product pr = productMap.get(pl.getProductUuid());
 				Transaction t = new Transaction();
 				subTotal += t.getSubTotal(pr, pl);
-				fees += t.getFees(c, pr);
+				complianceFee = t.getComplianceFee(c);
+				serviceFees += t.getFees(pr);
 				taxes += t.getTaxes(pr, c, pl);
 				total += t.getTotal(pr, c, pl);
 			}
 
+			sumComplianceFee += complianceFee;
 			sumSubTotal += subTotal;
-			sumFees += fees;
+			sumFees += serviceFees + complianceFee;
 			sumTaxes += taxes;
 			sumTotal += total;
 			
+			subTotal = Math.round(subTotal * 100.00) / 100.00;
 			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(), c.getName(),
-					p.getName(), subTotal, fees, taxes, total));
+					p.getName(), subTotal, serviceFees + complianceFee, taxes, total + complianceFee));
 //			System.out.println(sb);
 
 		}
 		
 		sb.append("===================================================================="
 				+ "=====================================================================\n");
-		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes, sumTotal));
+		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes, sumTotal + sumComplianceFee));
 
 		
 		System.out.println(sb);

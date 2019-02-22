@@ -3,9 +3,9 @@ package com.cinco;
 public class ProductList {
 
 	public String productUuid;
-	public int invoiceProductData;
+	public double invoiceProductData;
 
-	public ProductList(String productUuid, int invoiceProductData) {
+	public ProductList(String productUuid, double invoiceProductData) {
 		this.productUuid = productUuid;
 		this.invoiceProductData = invoiceProductData;
 	}
@@ -18,7 +18,7 @@ public class ProductList {
 		return productUuid;
 	}
 
-	public int getInvoiceProductData() {
+	public double getInvoiceProductData() {
 		return invoiceProductData;
 	}
 

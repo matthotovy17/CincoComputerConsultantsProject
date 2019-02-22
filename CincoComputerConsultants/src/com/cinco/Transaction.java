@@ -6,20 +6,24 @@ public class Transaction {
 		
 	}
 
-	public double getSubTotal(Product p, ProductList pl) {
-		return (pl.getInvoiceProductData() * p.getProductCost());
+	public double getSubTotal(Product pr, ProductList pl) {
+		return (pl.getInvoiceProductData() * pr.getProductCost());
 	}
 	
-	public double getFees(Customer c, Product p) {
-		return (p.getServiceFee() + c.getComplianceFee());
+	public double getComplianceFee(Customer c) {
+		return c.getComplianceFee();
+	}
+	
+	public double getFees(Product pr) {
+		return pr.getServiceFee();
 	}
 
-	public double getTaxes(Product p, Customer c, ProductList pl) {
-		return ((p.getTaxRate() * c.getSalesTax()) * this.getSubTotal(p, pl));
+	public double getTaxes(Product pr, Customer c, ProductList pl) {
+		return ((pr.getTaxRate() * c.getSalesTax()) * getSubTotal(pr, pl));
 	}
 
-	public double getTotal(Product p, Customer c, ProductList pl) {
-		return (this.getTaxes(p, c, pl) + this.getSubTotal(p, pl) + this.getFees(c, p));
+	public double getTotal(Product pr, Customer c, ProductList pl) {
+		return (getTaxes(pr, c, pl) + getSubTotal(pr, pl) + getFees(pr));
 	}
 
 }

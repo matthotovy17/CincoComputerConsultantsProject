@@ -178,7 +178,10 @@ public class FileReader {
 					} else {
 						LocalDate beginDate = LocalDate.parse(productDataList[1]);
 						LocalDate endDate = LocalDate.parse(productDataList[2]);
-						int effectiveDays = (int) ChronoUnit.DAYS.between(beginDate, endDate);
+						double effectiveDays = (double) ChronoUnit.DAYS.between(beginDate, endDate);
+//						EffectiveDays d = new EffectiveDays();
+//						int effectiveDays = d.getEffectiveDays(productDataList[1], productDataList[2]);
+						effectiveDays /= 365.00;
 						p = new ProductList(productDataList[0], effectiveDays);
 					}
 					pl.add(p);
