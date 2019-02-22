@@ -2,6 +2,8 @@ package com.cinco;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -158,8 +160,22 @@ public class FileReader {
 				String invoiceUuid = tokens[0];
 				String customerUuid = tokens[1];
 				String personUuid = tokens[2];
-				String productList[] = tokens[3].split(",");
-				inv = new Invoice(invoiceUuid, customerUuid, personUuid, productList);
+				String productArray[] = tokens[3].split(",");
+				ProductList p = null;
+				ArrayList<ProductList> pl = new ArrayList<>();
+				for(int j = 0; j < productArray.length; j++) {
+					String productDataList[] = productArray[j].split(":");
+					if(productDataList.length == 2) {
+						p = new ProductList(productDataList[0], Integer.parseInt(productDataList[1]));
+					} else {
+						LocalDate beginDate = LocalDate.parse(productDataList[1]);
+						LocalDate endDate = LocalDate.parse(productDataList[2]);
+						int effectiveDays = (int) ChronoUnit.DAYS.between(beginDate, endDate);
+						p = new ProductList(productDataList[0], effectiveDays);
+					}
+					pl.add(p);
+				}
+				inv = new Invoice(invoiceUuid, customerUuid, personUuid, pl);
 				invoiceMap.put(invoiceUuid, inv);
 			}
 		}
