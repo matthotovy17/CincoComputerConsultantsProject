@@ -17,10 +17,12 @@ public class GovernmentCustomer extends Customer {
 		return "Government";
 	}
 
-	public double getComplianceFee() { // Government customers have a $125 compliance fee per invoice
+	// Government customers have a $125 compliance fee per invoice
+	public double getComplianceFee() {
 		return 125.00;
 	}
 
+	// Government customers have no sales tax on any products
 	public double getSalesTax() {
 		return 0.00;
 	}

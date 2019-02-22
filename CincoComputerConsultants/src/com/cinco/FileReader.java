@@ -8,9 +8,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class FileReader {
-	
-	public FileReader(){}
-	
+
+	public FileReader() {
+	}
+
 	public static Map<String, Person> getPersonsData(String fileName) {
 		/**
 		 * HashMap for the persons object to create key value pairs with personUuid in
@@ -30,7 +31,7 @@ public class FileReader {
 		int numPersonFileLines = Integer.parseInt(personFile.nextLine());
 		for (int i = 0; i < numPersonFileLines; i++) {
 			String line = personFile.nextLine();
-			if(!line.trim().isEmpty()) {
+			if (!line.trim().isEmpty()) {
 				Person p = null;
 				String tokens[] = line.split(";");
 				String personUuid = tokens[0];
@@ -45,7 +46,7 @@ public class FileReader {
 					p = new Person(personUuid, lastName, firstName, address, email);
 				} else {
 					String emails[] = tokens[3].split(",");
-					for(int j = 0; j < emails.length; j++) {
+					for (int j = 0; j < emails.length; j++) {
 						email.add(emails[j]);
 					}
 					p = new Person(personUuid, lastName, firstName, address, email);
@@ -57,8 +58,7 @@ public class FileReader {
 		personFile.close();
 		return personMap;
 	}
-  
-	
+
 	public static Map<String, Customer> getCustomersData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the customers file to put them into objects
 		Map<String, Customer> customerMap = new HashMap<String, Customer>();
@@ -95,7 +95,7 @@ public class FileReader {
 		customerFile.close();
 		return customerMap;
 	}
-	
+
 	public static Map<String, Product> getProductsData(String fileName, Map<String, Person> personMap) {
 		// Read in and parse the products file to put them into objects
 		Map<String, Product> productMap = new HashMap<String, Product>();
@@ -126,11 +126,11 @@ public class FileReader {
 				} else if (tokens[1].equals("L")) {
 					annualLicenseFee = Double.parseDouble(tokens[3]);
 					serviceFee = Double.parseDouble(tokens[4]);
-					p = new License(productUuid, name, annualLicenseFee, serviceFee); 
+					p = new License(productUuid, name, annualLicenseFee, serviceFee);
 				} else if (tokens[1].equals("C")) {
 					consultantPersonUuid = personMap.get(tokens[3]);
 					hourlyFee = Double.parseDouble(tokens[4]);
-					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee); 
+					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee);
 				}
 				productMap.put(productUuid, p);
 			}
@@ -138,30 +138,30 @@ public class FileReader {
 		productsFile.close();
 		return productMap;
 	}
-	
+
 	public static Map<String, Invoice> getInvoiceData(String fileName) {
 		Map<String, Invoice> invoiceMap = new HashMap<String, Invoice>();
 		Scanner invoiceFile = null;
-		
+
 		try {
 			invoiceFile = new Scanner(new File(fileName));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		
+
 		int numInvoiceFileLines = Integer.parseInt(invoiceFile.nextLine());
 		for (int i = 0; i < numInvoiceFileLines; i++) {
-				String line = invoiceFile.nextLine();
-				if (!line.trim().isEmpty()) {
-					Invoice inv = null;
-					String tokens[] = line.split(";");
-					String invoiceUuid = tokens[0];
-					String customerUuid = tokens[1];
-					String personUuid = tokens[2];
-					String productList[] = tokens[3].split(",");
-					inv = new Invoice(invoiceUuid, customerUuid, personUuid, productList);
-					invoiceMap.put(invoiceUuid, inv);
-				}
+			String line = invoiceFile.nextLine();
+			if (!line.trim().isEmpty()) {
+				Invoice inv = null;
+				String tokens[] = line.split(";");
+				String invoiceUuid = tokens[0];
+				String customerUuid = tokens[1];
+				String personUuid = tokens[2];
+				String productList[] = tokens[3].split(",");
+				inv = new Invoice(invoiceUuid, customerUuid, personUuid, productList);
+				invoiceMap.put(invoiceUuid, inv);
+			}
 		}
 		invoiceFile.close();
 		return invoiceMap;

@@ -7,21 +7,20 @@
 
 package com.cinco;
 
-public class CorporateCustomer extends Customer { //since customer implements Billable we still need to add in the methods.
+public class CorporateCustomer extends Customer {
 
-	public CorporateCustomer(String customerUuid, Person primaryContactUuid, String name,
-			Address address) {
+	public CorporateCustomer(String customerUuid, Person primaryContactUuid, String name, Address address) {
 		super(customerUuid, primaryContactUuid, name, address);
 	}
-	
+
 	public String getType() {
 		return "Corporate";
 	}
 
-	public double getComplianceFee() { //Corporate customers do not have compliance fee
+	public double getComplianceFee() {
 		return 0.00;
 	}
-	
+
 	public double getSalesTax() {
 		return 1.00;
 	}

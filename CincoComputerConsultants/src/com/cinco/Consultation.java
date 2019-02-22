@@ -12,20 +12,19 @@ public class Consultation extends Product {
 	private Person consultantPersonUuid;
 	private double hourlyFee;
 
-
-	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) { 
+	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) {
 		super(productUuid, name);
 		this.consultantPersonUuid = consultantPersonUuid;
 		this.hourlyFee = hourlyFee;
 	}
-	
-	//copy constructor
-	public Consultation(Consultation c) {
-		super(c.getProductUuid(), c.getName());
-		consultantPersonUuid = c.consultantPersonUuid;
-		hourlyFee = c.hourlyFee;
-	}
-	
+
+//	//copy constructor
+//	public Consultation(Consultation c) {
+//		super(c.getProductUuid(), c.getName());
+//		consultantPersonUuid = c.consultantPersonUuid;
+//		hourlyFee = c.hourlyFee;
+//	}
+
 	public String getType() {
 		return "Consultation";
 	}
@@ -37,21 +36,17 @@ public class Consultation extends Product {
 	public double getHourlyFee() {
 		return hourlyFee;
 	}
-	
+
 	public double getTaxRate() {
 		return .0425;
 	}
-	
+
 	public double getServiceFee() {
 		return 150.00;
 	}
-	
+
 	public double getProductCost() {
 		return this.getHourlyFee();
 	}
-	
-	//TODO: since consultation has an included service fee were other products may not when we do get fees we will want to add the service fee
-	//      and any other additional fees that may be included.
 
 }
- 
