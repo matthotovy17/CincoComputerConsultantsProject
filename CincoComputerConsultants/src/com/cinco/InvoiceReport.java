@@ -1,18 +1,19 @@
 package com.cinco;
 
-
 import java.util.Map;
 
 public class InvoiceReport {
-	
-	//TODO:1. check for rounding in our operations
-	//     2. Check for leap years being a problem
-	//     3. Check for time zones being the same and if not set them to both be the same
-	//     4. Finish the Detailed individual report
-	//     5. Sort by Customer
-	//     5. Clean up and format code.
-	//     6. add in headers and comments
-	//     7. Hope and pray we did good!
+
+	// TODO:1. check for rounding in our operations-- This is finished at least for
+	// now
+	// 2. Check for leap years being a problem
+	// 3. Check for time zones being the same and if not set them to both be the
+	// same
+	// 4. Finish the Detailed individual report
+	// 5. Sort by Customer
+	// 5. Clean up and format code.
+	// 6. add in headers and comments
+	// 7. Hope and pray we did good!
 
 	public static void main(String[] args) {
 
@@ -20,7 +21,7 @@ public class InvoiceReport {
 		Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
 		Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
 		Map<String, Invoice> invoiceMap = FileReader.getInvoiceData("data/Invoices.dat");
-		
+
 		printSummaryReport(personMap, customerMap, productMap, invoiceMap);
 
 	}
@@ -33,11 +34,11 @@ public class InvoiceReport {
 
 		sb.append(String.format("%-8s %-30s %-30s %-16s %-16s %-16s %-16s\n", "Invoice", "Customer", "SalesPerson",
 				"Subtotal", "Fees", "Taxes", "Total"));
-		
+
 		double sumSubTotal = 0.00, sumFees = 0.00, sumTaxes = 0.00, sumTotal = 0.00, sumComplianceFee = 0.0;
-		Invoice inv;// = null;
-		Customer c;// = null;
-		Person p;// = null;
+		Invoice inv;
+		Customer c;
+		Person p;
 
 		for (Map.Entry<String, Invoice> entry : invoiceMap.entrySet()) {
 			String key = entry.getKey();
@@ -60,25 +61,53 @@ public class InvoiceReport {
 			sumFees += serviceFees + complianceFee;
 			sumTaxes += taxes;
 			sumTotal += total;
-			
+
 			subTotal = Math.round(subTotal * 100.00) / 100.00;
-			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(), c.getName(),
-					p.getName(), subTotal, serviceFees + complianceFee, taxes, total + complianceFee));
+			serviceFees = Math.round(serviceFees * 100.00) / 100.00;
+			taxes = Math.round(taxes * 100.00) / 100.00;
+			total = Math.round(total * 100.00) / 100.00;
+			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(),
+					c.getName(), p.getName(), subTotal, serviceFees + complianceFee, taxes, total + complianceFee));
 //			System.out.println(sb);
 
 		}
-		
+
 		sb.append("===================================================================="
 				+ "=====================================================================\n");
-		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes, sumTotal + sumComplianceFee));
+		sumComplianceFee = Math.round(sumComplianceFee * 100.00) / 100.00;
+		sumSubTotal = Math.round(sumSubTotal * 100.00) / 100.00;
+		sumFees = Math.round(sumFees * 100.00) / 100.00;
+		sumTaxes = Math.round(sumTaxes * 100.00) / 100.00;
+		sumTotal = Math.round(sumTotal * 100.00) / 100.00;
 
-		
+		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes,
+				sumTotal + sumComplianceFee));
+
 		System.out.println(sb);
 
 	}
 
 //	public void printDetailedReport(Map<String, Person> personMap, Map<String, Customer> customerMap,
-//			Map<String, Product> productMap, Map<String, Invoice> invoiceMap) {
+//			                        Map<String, Product> productMap, Map<String, Invoice> invoiceMap) {
+//		
+//		System.out.println("Individual Invoice Detail Reports\n==================================================");
+//		
+//		
+//		double sumSubTotal = 0.00, sumFees = 0.00, sumTaxes = 0.00, sumTotal = 0.00, sumComplianceFee = 0.0;
+//		Invoice inv;
+//		Customer c;
+//		Person p;
+//		Person primaryContact;
+//		
+//		for (Map.Entry<String, Invoice> entry : invoiceMap.entrySet()) {
+//			String key = entry.getKey();
+//			inv = invoiceMap.get(key);
+//			c = customerMap.get(inv.getCustomerUuid());
+//			primaryContact = c.getPrimaryContactUuid();
+//			p = personMap.get(inv.getPersonUuid());
+//			
+//		}
+//		
 //
 //	}
 
