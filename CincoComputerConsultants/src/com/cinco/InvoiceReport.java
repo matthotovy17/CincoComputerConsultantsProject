@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class InvoiceReport {
 
-	// TODO:1. check for rounding in our operations
+	// TODO:1. check for rounding in our operations-- This is finished at least for now
 	// 2. Check for leap years being a problem
 	// 3. Check for time zones being the same and if not set them to both be the
 	// same
@@ -61,16 +61,22 @@ public class InvoiceReport {
 			sumTotal += total;
 
 			subTotal = Math.round(subTotal * 100.00) / 100.00;
+			serviceFees = Math.round(serviceFees * 100.00) / 100.00;
+			taxes = Math.round(taxes * 100.00) / 100.00;
+			total = Math.round(total * 100.00) / 100.00;
 			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(),
 					c.getName(), p.getName(), subTotal, serviceFees + complianceFee, taxes, total + complianceFee));
-
 		}
 
 		sb.append("===================================================================="
 				+ "=====================================================================\n");
+		sumComplianceFee = Math.round(sumComplianceFee * 100.00) / 100.00;
+		sumSubTotal = Math.round(sumSubTotal * 100.00) / 100.00;
+		sumFees = Math.round(sumFees * 100.00) / 100.00;
+		sumTaxes = Math.round(sumTaxes * 100.00) / 100.00;
+		sumTotal = Math.round(sumTotal * 100.00) / 100.00;
 		sb.append(String.format("%-70s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", "TOTALS", sumSubTotal, sumFees, sumTaxes,
 				sumTotal + sumComplianceFee));
-
 		System.out.println(sb);
 
 	}
@@ -120,5 +126,4 @@ public class InvoiceReport {
 		}
 
 	}
-
 }

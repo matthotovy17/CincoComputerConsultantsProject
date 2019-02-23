@@ -3,6 +3,7 @@ package com.cinco;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -173,16 +174,21 @@ public class FileReader {
 				 */
 				for(int j = 0; j < productArray.length; j++) {
 					String productDataList[] = productArray[j].split(":");
+					ArrayList<String> productData = new ArrayList<String>();
 					if(productDataList.length == 2) {
-						p = new ProductList(productDataList[0], Integer.parseInt(productDataList[1]));
+//						p = new ProductList(productDataList[0], Integer.parseInt(productDataList[1]));
+						productData.add(productDataList[1]);
+						p = new ProductList(productDataList[0], productData);
+						
 					} else {
-						LocalDate beginDate = LocalDate.parse(productDataList[1]);
-						LocalDate endDate = LocalDate.parse(productDataList[2]);
-						double effectiveDays = (double) ChronoUnit.DAYS.between(beginDate, endDate);
-//						EffectiveDays d = new EffectiveDays();
-//						int effectiveDays = d.getEffectiveDays(productDataList[1], productDataList[2]);
-						effectiveDays /= 365.00;
-						p = new ProductList(productDataList[0], effectiveDays);
+//						DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+//						LocalDate beginDate = LocalDate.parse(productDataList[1], formatter);
+//						LocalDate endDate = LocalDate.parse(productDataList[2], formatter);
+//						double effectiveDays = (double) ChronoUnit.DAYS.between(beginDate, endDate);
+//						effectiveDays /= 365.00;
+						productData.add(productDataList[1]);
+						productData.add(productDataList[2]);
+						p = new ProductList(productDataList[0], productData);
 					}
 					pl.add(p);
 				}
