@@ -42,4 +42,12 @@ public class Consultation extends Product {
 		return this.getHourlyFee();
 	}
 
+	public String getUnitString() {
+		return "hours @";
+	}
+
+	public String getPerUnit() {
+		return "/hour";
+	}
+
 }

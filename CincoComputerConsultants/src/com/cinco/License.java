@@ -1,4 +1,12 @@
+/**
+ * Author: Chloe Galinsky, Matt Hotovy
+ * Date: 2/8/2019
+ * 
+ * This class is a subclass of product
+ */
+
 package com.cinco;
+
 
 public class License extends Product {
 
@@ -32,4 +40,11 @@ public class License extends Product {
 		return this.getAnnualLicenseFee();
 	}
 
+	public String getUnitString() {
+		return "days @";
+	}
+	
+	public String getPerUnit() {
+		return "/yr";
+	}
 }

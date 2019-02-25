@@ -1,10 +1,14 @@
+/**
+ * Author: Chloe Galinsky, Matt Hotovy
+ * Date: 2/8/2019
+ * 
+ * This class is for reading in and parsing files
+ */
+
 package com.cinco;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -168,24 +172,18 @@ public class FileReader {
 				ProductList p = null;
 				ArrayList<ProductList> pl = new ArrayList<>();
 				/**
-				 *  reads through the products and data and parses the products to recognize whether 
-				 *  it is a license or equipment/consultation in order to store the data
-				 *  in an arrayList
+				 * reads through the products and data and parses the products to recognize
+				 * whether it is a license or equipment/consultation in order to store the data
+				 * in an arrayList
 				 */
-				for(int j = 0; j < productArray.length; j++) {
+				for (int j = 0; j < productArray.length; j++) {
 					String productDataList[] = productArray[j].split(":");
 					ArrayList<String> productData = new ArrayList<String>();
-					if(productDataList.length == 2) {
-//						p = new ProductList(productDataList[0], Integer.parseInt(productDataList[1]));
+					if (productDataList.length == 2) {
 						productData.add(productDataList[1]);
 						p = new ProductList(productDataList[0], productData);
-						
+
 					} else {
-//						DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-//						LocalDate beginDate = LocalDate.parse(productDataList[1], formatter);
-//						LocalDate endDate = LocalDate.parse(productDataList[2], formatter);
-//						double effectiveDays = (double) ChronoUnit.DAYS.between(beginDate, endDate);
-//						effectiveDays /= 365.00;
 						productData.add(productDataList[1]);
 						productData.add(productDataList[2]);
 						p = new ProductList(productDataList[0], productData);

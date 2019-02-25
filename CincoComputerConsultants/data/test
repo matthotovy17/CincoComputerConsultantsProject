@@ -1,0 +1,97 @@
+Executive Summary Report
+=========================
+Invoice   Customer                                          Salesperson                      Subtotal        Fees       Taxes       Total
+INVC1003  Madalay Industries                                Smydra, Kordel                $  34551.27 $   1899.00 $   1502.80 $  37953.07
+INVC1001  Stark Industries                                  Davis, Miles                  $ 508383.56 $   1899.00 $  35356.30 $ 545638.86
+INVC1004  Stark Industries                                  Smydra, Kordel                $  16800.00 $    190.00 $    714.00 $  17704.00
+INVC1002  University of Nebraska-Lincoln                    Rediger, Tyler                $   3943.75 $    150.00 $      0.00 $   4218.75
+=========================================================================================================================================
+TOTALS                                                                                    $ 563678.58 $   4138.00 $  37573.10 $ 605514.68
+
+
+
+
+Individual Invoice Detail Reports
+==================================================
+Invoice INVC1002
+========================
+Salesperson: Rediger, Tyler
+Customer Info:
+  University of Nebraska-Lincoln (AB11)
+  Reidesel, Charles
+  420 University Terrace
+  Lincoln NE 68588 USA
+-------------------------------------------
+Code      Item                                                                         Fees       Total
+1239      Rockfort GameBox (1 units @ $499.00/unit)                             $      0.00 $    499.00
+ab23      Rockfort Jdisc (25 units @ $124.99/unit)                              $      0.00 $   3124.75
+3289      Mandalay-Jtone Training (10.00 hrs @ $32.00/hr)                       $    150.00 $    320.00
+                                                                                ========================
+SUB-TOTALS                                                                                  $   3943.75
+COMPLIANCE FEE                                                                              $    125.00
+TAXES                                                                                       $      0.00
+FEES                                                                                        $    150.00
+TOTAL                                                                                       $   4218.75
+
+
+
+Invoice INVC1001
+========================
+Salesperson: Davis, Miles
+Customer Info:
+  Stark Industries (AB12)
+  Sonford, Harry
+  184 Marvel Way
+  New York NY 10453 USA
+-------------------------------------------
+Code      Item                                                                         Fees       Total
+s42a      Jericho Missile (2 units @ $250000.00/unit)                           $      0.00 $ 500000.00
+90fa      Mandalay Long Distance Service (180 days @ $17000.00/yr; 2013-01-01, 2013-06-30)$   1899.00 $   8383.56
+                                                                                ========================
+SUB-TOTALS                                                                                  $ 508383.56
+COMPLIANCE FEE                                                                              $      0.00
+TAXES                                                                                       $  35356.30
+FEES                                                                                        $   1899.00
+TOTAL                                                                                       $ 545638.86
+
+
+
+Invoice INVC1004
+========================
+Salesperson: Smydra, Kordel
+Customer Info:
+  Stark Industries (AB12)
+  Sonford, Harry
+  184 Marvel Way
+  New York NY 10453 USA
+-------------------------------------------
+Code      Item                                                                         Fees       Total
+3294      MCloud Data Storage (1825 days @ $3000.00/yr; 2014-01-01, 2018-12-31) $     40.00 $  15000.00
+298K      MServer-Server System Setup and Assistance (10.00 hrs @ $180.00/hr)   $    150.00 $   1800.00
+                                                                                ========================
+SUB-TOTALS                                                                                  $  16800.00
+COMPLIANCE FEE                                                                              $      0.00
+TAXES                                                                                       $    714.00
+FEES                                                                                        $    190.00
+TOTAL                                                                                       $  17704.00
+
+
+
+Invoice INVC1003
+========================
+Salesperson: Smydra, Kordel
+Customer Info:
+  Madalay Industries (AB15)
+  Hanten, Mathias
+  1060 West Addison
+  Springfield IL 60601 USA
+-------------------------------------------
+Code      Item                                                                         Fees       Total
+90fa      Mandalay Long Distance Service (715 days @ $17000.00/yr; 2013-01-15, 2014-12-31)$   1899.00 $  33301.37
+ab23      Rockfort Jdisc (10 units @ $124.99/unit)                              $      0.00 $   1249.90
+                                                                                ========================
+SUB-TOTALS                                                                                  $  34551.27
+COMPLIANCE FEE                                                                              $      0.00
+TAXES                                                                                       $   1502.80
+FEES                                                                                        $   1899.00
+TOTAL                                                                                       $  37953.07c

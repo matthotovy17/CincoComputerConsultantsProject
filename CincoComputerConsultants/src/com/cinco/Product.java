@@ -25,6 +25,7 @@ public abstract class Product {
 		return name;
 	}
 
+	// abstract classes for subclasses
 	public abstract String getType();
 
 	public abstract double getTaxRate();
@@ -32,5 +33,9 @@ public abstract class Product {
 	public abstract double getServiceFee();
 
 	public abstract double getProductCost();
+	
+	public abstract String getUnitString();
+	
+	public abstract String getPerUnit();
 
 }

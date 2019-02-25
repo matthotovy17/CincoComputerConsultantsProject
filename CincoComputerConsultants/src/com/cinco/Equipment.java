@@ -1,3 +1,10 @@
+/**
+ * Author: Chloe Galinsky, Matt Hotovy
+ * Date: 2/8/2019
+ * 
+ * This object is a subclass of product
+ */
+
 package com.cinco;
 
 public class Equipment extends Product {
@@ -26,8 +33,17 @@ public class Equipment extends Product {
 		return .07;
 	}
 
+	// equipment does not have a service fee
 	public double getServiceFee() {
 		return 0.00;
+	}
+
+	public String getUnitString() {
+		return "units @";
+	}
+
+	public String getPerUnit() {
+		return "/unit";
 	}
 
 }
