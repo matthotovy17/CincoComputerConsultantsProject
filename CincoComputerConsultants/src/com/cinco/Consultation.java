@@ -9,7 +9,7 @@ package com.cinco;
 
 public class Consultation extends Product {
 
-	private Person consultantPersonUuid;
+	private Person consultantPersonUuid; //consultantPersonUuid should of been a string
 	private double hourlyFee;
 
 	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) {
