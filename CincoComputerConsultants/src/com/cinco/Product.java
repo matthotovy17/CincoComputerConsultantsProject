@@ -25,6 +25,7 @@ public abstract class Product {
 		return name;
 	}
 
+	// abstract classes for subclasses
 	public abstract String getType();
 
 	public abstract double getTaxRate();
