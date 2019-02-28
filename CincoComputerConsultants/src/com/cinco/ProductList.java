@@ -29,10 +29,10 @@ public class ProductList {
 	
 	}
 	
-	public long getDaysBetween(Date beginDate, Date endDate) {
-		long difference = endDate.getTime() - beginDate.getTime();
-		return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
-	
-	}
+//	public long getDaysBetween(Date beginDate, Date endDate) {
+//		long difference = endDate.getTime() - beginDate.getTime();
+//		return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
+//	
+//	}
 
 }

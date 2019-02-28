@@ -31,5 +31,13 @@ public class License extends Product {
 	public double getProductCost() {
 		return this.getAnnualLicenseFee();
 	}
+	
+	public String getUnitsString() {
+		return "Days @";
+	}
+	
+	public String getPerUnit() {
+		return "/year";
+	}
 
 }

@@ -13,7 +13,7 @@ public class Invoice {
 
 	private String invoiceUuid;
 	private String customerUuid;
-	private String personUuid;
+	private String personUuid; //switch to salesPersonUuid
 	private ArrayList<ProductList> productList;
 
 	public Invoice(String invoiceUuid, String customerUuid, String personUuid, ArrayList<ProductList> productList) {

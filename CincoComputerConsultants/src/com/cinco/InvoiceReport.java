@@ -1,5 +1,6 @@
 package com.cinco;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class InvoiceReport {
@@ -86,7 +87,7 @@ public class InvoiceReport {
 		System.out.println("Individual Invoice Detail Reports \n=================================");
 
 		Person primaryContact;
-		Product productName;
+//		Product pr;
 		Invoice inv;
 		Customer c;
 		Person p;
@@ -118,6 +119,22 @@ public class InvoiceReport {
 				serviceFees = t.getFees(pr);
 				taxes = t.getTaxes(pr, c, pl);
 				total = t.getTotal(pr, c, pl);
+				ArrayList<String> data = new ArrayList<String>();
+				data = pl.getInvoiceProductData();
+				double numProducts = 0.0;
+				String unitString = pr.getUnitsString();
+				String perUnit = pr.getPerUnit();
+				if(data.size() == 1) {
+					numProducts = Double.parseDouble(data.get(0));
+					System.out.printf("(%d %s $%f%s)", numProducts, unitString, pr.getProductCost(), perUnit);
+				} else {
+					String beginDate = data.get(0);
+					String endDate = data.get(1);
+				}
+				
+				System.out.printf("(%d %s $%f%s)", numProducts, unitString, pr.getProductCost(), perUnit);
+				
+				
 				System.out.printf("%-10s %-50s $%-10.2f\n", pl.getProductUuid(), pr.getName(), pr.getServiceFee());
 			}
 			

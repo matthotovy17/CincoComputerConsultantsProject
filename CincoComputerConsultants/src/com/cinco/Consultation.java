@@ -41,5 +41,13 @@ public class Consultation extends Product {
 	public double getProductCost() {
 		return this.getHourlyFee();
 	}
+	
+	public String getUnitsString() {
+		return "Hours @";
+	}
+	
+	public String getPerUnit() {
+		return "/hour";
+	}
 
 }

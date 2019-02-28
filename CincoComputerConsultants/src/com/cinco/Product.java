@@ -32,5 +32,9 @@ public abstract class Product {
 	public abstract double getServiceFee();
 
 	public abstract double getProductCost();
+	
+	public abstract String getUnitsString();
+	
+	public abstract String getPerUnit();
 
 }

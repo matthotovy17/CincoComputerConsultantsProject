@@ -13,24 +13,16 @@ public class Transaction {
 
 	public double getSubTotal(Product pr, ProductList pl) {
 //		return (pl.getInvoiceProductData() * pr.getProductCost());
-		ArrayList<String> productData = new ArrayList<String>();
-		productData = pl.getInvoiceProductData();
-		if(productData.size() == 1) {
-			return (double)(pr.getProductCost() * (Double.parseDouble(productData.get(0))));
-		} else {
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-M-d");
-			Date beginDate = null;
-			Date endDate = null;
-		    try {
-		    	beginDate = format.parse(productData.get(0));
-				endDate = format.parse(productData.get(1));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-		    double numDays = (double)pl.getDaysBetween(beginDate, endDate);
-		    double numYears = numDays/365.0;
-		    return (numYears * pr.getProductCost());
-		}
+		
+		
+//		ArrayList<String> productData = new ArrayList<String>();
+//		productData = pl.getInvoiceProductData();
+//		if(productData.size() == 1) {
+//			return (double)(pr.getProductCost() * (Double.parseDouble(productData.get(0))));
+//		} else {
+//			EffectiveDays days = new EffectiveDays();
+//		    return (days.getEffectiveDays(productData, pl) * pr.getProductCost());
+//		}
 	}
 	
 	public double getComplianceFee(Customer c) {

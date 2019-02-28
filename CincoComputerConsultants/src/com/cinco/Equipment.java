@@ -29,5 +29,13 @@ public class Equipment extends Product {
 	public double getServiceFee() {
 		return 0.00;
 	}
+	
+	public String getUnitsString() {
+		return "units @";
+	}
+	
+	public String getPerUnit() {
+		return "/unit";
+	}
 
 }
