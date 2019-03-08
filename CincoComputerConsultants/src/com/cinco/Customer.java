@@ -10,14 +10,14 @@ package com.cinco;
 public abstract class Customer {
 
 	protected String customerUuid;
-	protected Person primaryContactUuid;
+	protected Person primaryContact;
 	protected String name;
 	protected Address address;
 
-	public Customer(String customerUuid, Person primaryContactUuid, String name, Address address) {
+	public Customer(String customerUuid, Person primaryContact, String name, Address address) {
 		super();
 		this.customerUuid = customerUuid;
-		this.primaryContactUuid = primaryContactUuid;
+		this.primaryContact = primaryContact;
 		this.name = name;
 		this.address = address;
 	}
@@ -27,7 +27,7 @@ public abstract class Customer {
 	}
 
 	public Person getPrimaryContactUuid() {
-		return primaryContactUuid;
+		return primaryContact;
 	}
 
 	public String getName() {

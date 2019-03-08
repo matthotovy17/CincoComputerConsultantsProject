@@ -9,21 +9,35 @@ package com.cinco;
 
 public class Consultation extends Product {
 
-	private Person consultantPersonUuid; //consultantPersonUuid should of been a string
+	private Person consultantPerson; 
 	private double hourlyFee;
+	private int billableHours;
+	
 
-	public Consultation(String productUuid, String name, Person consultantPersonUuid, double hourlyFee) {
+	public Consultation(String productUuid, String name, Person consultantPerson, double hourlyFee) {
 		super(productUuid, name);
-		this.consultantPersonUuid = consultantPersonUuid;
+		this.consultantPerson = consultantPerson;
 		this.hourlyFee = hourlyFee;
+	}
+	
+	// Copy Constructor
+	public Consultation(Consultation c, int billableHours) {
+		super(c.getProductUuid(), c.getName());
+		this.consultantPerson = c.getConsultantPerson();
+		this.hourlyFee = c.getHourlyFee();
+		this.billableHours = billableHours;
+	}
+	
+	public int getBillableHours() {
+		return billableHours;
 	}
 
 	public String getType() {
 		return "Consultation";
 	}
 
-	public Person getConsultantPersonUuid() {
-		return consultantPersonUuid;
+	public Person getConsultantPerson() {
+		return consultantPerson;
 	}
 
 	public double getHourlyFee() {
@@ -38,8 +52,9 @@ public class Consultation extends Product {
 		return 150.00;
 	}
 
+	//returns the cost for that product.
 	public double getProductCost() {
-		return this.getHourlyFee();
+		return (this.getHourlyFee() * this.getBillableHours());
 	}
 	
 	public String getUnitsString() {
@@ -49,10 +64,5 @@ public class Consultation extends Product {
 	public String getPerUnit() {
 		return "/hour";
 	}
-
-	public String getUnitString() {
-		return "hours @";
-	}
-
 
 }

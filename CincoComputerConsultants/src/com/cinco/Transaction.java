@@ -17,15 +17,8 @@ public class Transaction {
 	}
 
 	// returns the sub total
-	public double getSubTotal(Product pr, ProductList pl) {
-		ArrayList<String> productData = new ArrayList<String>();
-		productData = pl.getInvoiceProductData();
-		if(productData.size() == 1) {
-			return (double)(pr.getProductCost() * (Double.parseDouble(productData.get(0))));
-		} else {
-			EffectiveDays days = new EffectiveDays();
-			return(((double)days.getEffectiveDays(productData, pl)) * pr.getProductCost());
-		}
+	public double getSubTotal(Product pr) {
+		return pr.getProductCost();
 	}
 	
 	// returns the compliance fee
@@ -39,13 +32,13 @@ public class Transaction {
 	}
 
 	// returns the taxes
-	public double getTaxes(Product pr, Customer c, ProductList pl) {
-		return ((pr.getTaxRate() * c.getSalesTax()) * getSubTotal(pr, pl));
+	public double getTaxes(Product pr, Customer c) {
+		return ((pr.getTaxRate() * c.getSalesTax()) * getSubTotal(pr));
 	}
 
 	// returns the total
-	public double getTotal(Product pr, Customer c, ProductList pl) {
-		return (getTaxes(pr, c, pl) + getSubTotal(pr, pl));
+	public double getTotal(Product pr, Customer c) {
+		return (getTaxes(pr, c) + getSubTotal(pr));
 	}
 
 }

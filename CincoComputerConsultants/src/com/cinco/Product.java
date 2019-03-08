@@ -16,6 +16,10 @@ public abstract class Product {
 		this.productUuid = productUuid;
 		this.name = name;
 	}
+	
+	public Product() {
+		
+	}
 
 	public String getProductUuid() {
 		return productUuid;

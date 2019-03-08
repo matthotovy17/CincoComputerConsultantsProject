@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class FileReader {
 
 	public FileReader() {
+		
 	}
 
 	public static Map<String, Person> getPersonsData(String fileName) {
@@ -86,15 +87,15 @@ public class FileReader {
 				Customer c = null;
 				String tokens[] = line.split(";");
 				String customerUuid = tokens[0];
-				Person primaryContactUuid = personMap.get(tokens[2]);
+				Person primaryContact = personMap.get(tokens[2]);
 				String name = tokens[3];
 				String ad[] = tokens[4].split(",");
 				Address address = new Address(ad[0], ad[1], ad[2], ad[3], ad[4]);
 				// Read type and set parameters for corresponding customer subclass
 				if (tokens[1].equals("G")) {
-					c = new GovernmentCustomer(customerUuid, primaryContactUuid, name, address);
+					c = new GovernmentCustomer(customerUuid, primaryContact, name, address);
 				} else if (tokens[1].equals("C")) {
-					c = new CorporateCustomer(customerUuid, primaryContactUuid, name, address);
+					c = new CorporateCustomer(customerUuid, primaryContact, name, address);
 				}
 				customerMap.put(customerUuid, c);
 			}
@@ -125,7 +126,7 @@ public class FileReader {
 				String productUuid = tokens[0];
 				String name = tokens[2];
 				double pricePerUnit, annualLicenseFee, serviceFee, hourlyFee;
-				Person consultantPersonUuid;
+				Person consultantPerson;
 				// Read type and set parameters to corresponding product subclass
 				if (tokens[1].equals("E")) {
 					pricePerUnit = Double.parseDouble(tokens[3]);
@@ -135,9 +136,9 @@ public class FileReader {
 					serviceFee = Double.parseDouble(tokens[4]);
 					p = new License(productUuid, name, annualLicenseFee, serviceFee);
 				} else if (tokens[1].equals("C")) {
-					consultantPersonUuid = personMap.get(tokens[3]);
+					consultantPerson = personMap.get(tokens[3]);
 					hourlyFee = Double.parseDouble(tokens[4]);
-					p = new Consultation(productUuid, name, consultantPersonUuid, hourlyFee);
+					p = new Consultation(productUuid, name, consultantPerson, hourlyFee);
 				}
 				productMap.put(productUuid, p);
 			}
@@ -146,7 +147,8 @@ public class FileReader {
 		return productMap;
 	}
 
-	public static Map<String, Invoice> getInvoiceData(String fileName) {
+	public static Map<String, Invoice> getInvoiceData(String fileName, Map<String, Person> personMap,
+		                                              Map<String, Customer> customerMap, Map<String, Product> productMap) {
 		// Read in and parse the invoice file to put them into objects
 		Map<String, Invoice> invoiceMap = new HashMap<String, Invoice>();
 		Scanner invoiceFile = null;
@@ -165,32 +167,34 @@ public class FileReader {
 				Invoice inv = null;
 				String tokens[] = line.split(";");
 				String invoiceUuid = tokens[0];
-				String customerUuid = tokens[1];
-				String personUuid = tokens[2];
-				// parse the invoice file on the different products and data
+				Customer customer = customerMap.get(tokens[1]);
+				Person salesPerson = personMap.get(tokens[2]);
 				String productArray[] = tokens[3].split(",");
-				ProductList p = null;
-				ArrayList<ProductList> pl = new ArrayList<>();
-				/**
-				 * reads through the products and data and parses the products to recognize
-				 * whether it is a license or equipment/consultation in order to store the data
-				 * in an arrayList
-				 */
-				for (int j = 0; j < productArray.length; j++) {
+				ArrayList<Product> pl = new ArrayList<Product>();
+				// parse the invoice file on the different products and data.
+ 				for(int j = 0; j < productArray.length; j++) {
 					String productDataList[] = productArray[j].split(":");
-					ArrayList<String> productData = new ArrayList<String>();
-					if (productDataList.length == 2) {
-						productData.add(productDataList[1]);
-						p = new ProductList(productDataList[0], productData);
-
-					} else {
-						productData.add(productDataList[1]);
-						productData.add(productDataList[2]);
-						p = new ProductList(productDataList[0], productData);
+					Product product = productMap.get(productDataList[0]);
+					Product p = null;
+					String type = product.getType();
+					if(type.equals("Equipment")) {
+						int numberOfUnits = Integer.parseInt(productDataList[1]);
+						Equipment e = (Equipment) productMap.get(productDataList[0]);
+						p = new Equipment(e, numberOfUnits);
+					} else if(type.equals("Consultation")) {
+						int billableHours = Integer.parseInt(productDataList[1]);
+						Consultation c = (Consultation) productMap.get(productDataList[0]);
+						p = new Consultation(c, billableHours);
+					} else if(type.equals("License")) {
+						License l = (License) productMap.get(productDataList[0]);
+						String beginDate = productDataList[1];
+						String endDate = productDataList[2];
+						int effectiveDays = l.getEffectiveDays(beginDate, endDate);
+						p = new License(l, effectiveDays);
 					}
 					pl.add(p);
 				}
-				inv = new Invoice(invoiceUuid, customerUuid, personUuid, pl);
+				inv = new Invoice(invoiceUuid, customer, salesPerson, pl);
 				invoiceMap.put(invoiceUuid, inv);
 			}
 		}

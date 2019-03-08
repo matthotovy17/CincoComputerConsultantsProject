@@ -12,12 +12,14 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class ProductList {
+	
+	//We will not longer need to use this class since we are using the copy constructors in each product.
 
-	public String productUuid;
+	public Product product;
 	public ArrayList<String> invoiceProductData;
 
-	public ProductList(String productUuid, ArrayList<String> invoiceProductData) {
-		this.productUuid = productUuid;
+	public ProductList(Product product, ArrayList<String> invoiceProductData) {
+		this.product = product;
 		this.invoiceProductData = invoiceProductData;
 	}
 	
@@ -25,8 +27,8 @@ public class ProductList {
 		
 	}
 
-	public String getProductUuid() {
-		return productUuid;
+	public Product getProduct() {
+		return product;
 	}
 
 	public ArrayList<String> getInvoiceProductData() {
@@ -34,10 +36,12 @@ public class ProductList {
 	
 	}
 	
-	public long getDaysBetween(Date beginDate, Date endDate) {
-		long difference = endDate.getTime() - beginDate.getTime();
-		return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
+	//We should not need this function anymore because it is in the License Object.
 	
-	}
+//	public long getDaysBetween(Date beginDate, Date endDate) {
+//		long difference = endDate.getTime() - beginDate.getTime();
+//		return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
+//	
+//	}
 
 }

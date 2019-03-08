@@ -17,39 +17,42 @@ import org.joda.time.DateTimeZone;
 import org.joda.time.Days;
 
 public class EffectiveDays {
+	
+	// This class here is breaking encapsulation and should be part of the license object
 
 	public EffectiveDays() {
 
 	}
 	
+//	 XXX we should not need to use This class anymore, this stuff should be in License. XXX
 
 	// returns the number of effective days
-	public int getEffectiveDays(String beginDate, String endDate) {
-
-		DateTime dt = new DateTime(beginDate);
-		DateTime beginDt = dt.withZone(DateTimeZone.forID("Europe/London"));
-		dt = new DateTime(endDate);
-		DateTime endDt = dt.withZone(DateTimeZone.forID("Europe/London"));
-		int effectiveDays = Days.daysBetween(beginDt, endDt).getDays();
-
-		return effectiveDays;
-	}
+//	public int getEffectiveDays(String beginDate, String endDate) {
+//
+//		DateTime dt = new DateTime(beginDate);
+//		DateTime beginDt = dt.withZone(DateTimeZone.forID("Europe/London"));
+//		dt = new DateTime(endDate);
+//		DateTime endDt = dt.withZone(DateTimeZone.forID("Europe/London"));
+//		int effectiveDays = Days.daysBetween(beginDt, endDt).getDays();
+//
+//		return effectiveDays;
+//	}
 
 	// returns the number of effective days
-	public double getEffectiveDays(ArrayList<String> productData, ProductList pl) {
-
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-M-d");
-		Date beginDate = null;
-		Date endDate = null;
-		try {
-			beginDate = format.parse(productData.get(0));
-			endDate = format.parse(productData.get(1));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		double numDays = (double) pl.getDaysBetween(beginDate, endDate);
-		double numYears = (double) numDays / 365.0;
-
-		return numYears;
-	}
+//	public double getEffectiveDays(ArrayList<String> productData, ProductList pl) {
+//
+//		SimpleDateFormat format = new SimpleDateFormat("yyyy-M-d");
+//		Date beginDate = null;
+//		Date endDate = null;
+//		try {
+//			beginDate = format.parse(productData.get(0));
+//			endDate = format.parse(productData.get(1));
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+//		double numDays = (double) pl.getDaysBetween(beginDate, endDate);
+//		double numYears = (double) numDays / 365.0;
+//
+//		return numYears;
+//	}
 }

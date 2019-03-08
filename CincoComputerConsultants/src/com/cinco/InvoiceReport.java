@@ -16,7 +16,7 @@ public class InvoiceReport {
 		Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");
 		Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
 		Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
-		Map<String, Invoice> invoiceMap = FileReader.getInvoiceData("data/Invoices.dat");
+		Map<String, Invoice> invoiceMap = FileReader.getInvoiceData("data/Invoices.dat", personMap, customerMap, productMap);
 
 		printSummaryReport(personMap, customerMap, productMap, invoiceMap);
 		printDetailedReport(personMap, customerMap, productMap, invoiceMap);
@@ -24,7 +24,7 @@ public class InvoiceReport {
 
 	// does operations and prints the executive summary report
 	public static void printSummaryReport(Map<String, Person> personMap, Map<String, Customer> customerMap,
-			Map<String, Product> productMap, Map<String, Invoice> invoiceMap) {
+			                              Map<String, Product> productMap, Map<String, Invoice> invoiceMap) {
 
 		System.out.println("Executive Summary Report \n=========================");
 		StringBuilder sb = new StringBuilder();
@@ -41,18 +41,17 @@ public class InvoiceReport {
 		for (Map.Entry<String, Invoice> entry : invoiceMap.entrySet()) {
 			String key = entry.getKey();
 			inv = invoiceMap.get(key);
-			c = customerMap.get(inv.getCustomerUuid());
-			p = personMap.get(inv.getPersonUuid());
+			c = inv.getCustomer();
+			p = inv.getSalesPerson();
 			double subTotal = 0.00, serviceFees = 0.00, taxes = 0.00, total = 0.00, complianceFee = 0.00;
 			// reads through the product list from the invoice
-			for (ProductList pl : inv.getProductList()) {
-				Product pr = productMap.get(pl.getProductUuid());
+			for (Product pr : inv.getProductList()) {
 				Transaction t = new Transaction();
-				subTotal += t.getSubTotal(pr, pl);
+				subTotal += t.getSubTotal(pr);
 				complianceFee = t.getComplianceFee(c);
 				serviceFees += t.getFees(pr);
-				taxes += t.getTaxes(pr, c, pl);
-				total += t.getTotal(pr, c, pl);
+				taxes += t.getTaxes(pr, c);
+				total += t.getTotal(pr, c);
 			}
 			sumComplianceFee += complianceFee;
 			sumSubTotal += subTotal;
@@ -82,8 +81,7 @@ public class InvoiceReport {
 
 	}
 
-	// does operations and prints the detailed summary reports on each invoice
-	// instance
+	// does operations and prints the detailed summary reports on each invoice instance
 	public static void printDetailedReport(Map<String, Person> personMap, Map<String, Customer> customerMap,
 			Map<String, Product> productMap, Map<String, Invoice> invoiceMap) {
 		System.out.println("Individual Invoice Detail Reports \n=================================");
@@ -99,10 +97,10 @@ public class InvoiceReport {
 			double sumSubTotal = 0.00, sumFees = 0.00, sumTaxes = 0.00, sumTotal = 0.00, sumComplianceFee = 0.0;
 			String key = entry.getKey();
 			inv = invoiceMap.get(key);
-			c = customerMap.get(inv.getCustomerUuid());
+			c = inv.getCustomer();
 			primaryContact = c.getPrimaryContactUuid();
 			address = c.getAddress();
-			p = personMap.get(inv.getPersonUuid());
+			p = inv.getSalesPerson();
 			System.out.println("Invoice " + inv.getInvoiceUuid());
 			System.out.println("=================");
 			System.out.println("Salesperson: " + p.getName());
@@ -115,12 +113,12 @@ public class InvoiceReport {
 			System.out.printf("%-10s %-50s %-11s %-16s\n", "Code", "Item", "Fees", "Total");
 			double subTotal = 0.00, taxes = 0.00, total = 0.00, complianceFee = 0.00, fees = 0.00;
 			// reads through the product list for the invoice
-			for (ProductList pl : inv.getProductList()) {
-				Product pr = productMap.get(pl.getProductUuid());
+			for (Product pl : inv.getProductList()) {
+				//Product pr = productMap.get(pl.getProductUuid());
 				Transaction t = new Transaction();
-				subTotal = t.getSubTotal(pr, pl);
+				subTotal = t.getSubTotal(pl);
 				complianceFee = t.getComplianceFee(c);
-				taxes = t.getTaxes(pr, c, pl);
+				taxes = t.getTaxes(pl, c);
 			}
 			// print formatting
 			sumComplianceFee += complianceFee;

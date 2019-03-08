@@ -12,14 +12,14 @@ import java.util.ArrayList;
 public class Invoice {
 
 	private String invoiceUuid;
-	private String customerUuid;
-	private String personUuid; //switch to salesPersonUuid
-	private ArrayList<ProductList> productList;
+	private Customer customer;
+	private Person salesPerson;
+	private ArrayList<Product> productList;
 
-	public Invoice(String invoiceUuid, String customerUuid, String personUuid, ArrayList<ProductList> productList) {
+	public Invoice(String invoiceUuid, Customer customer, Person salesPerson, ArrayList<Product> productList) {
 		this.invoiceUuid = invoiceUuid;
-		this.customerUuid = customerUuid;
-		this.personUuid = personUuid;
+		this.customer = customer;
+		this.salesPerson = salesPerson;
 		this.productList = productList;
 	}
 
@@ -27,15 +27,15 @@ public class Invoice {
 		return invoiceUuid;
 	}
 
-	public String getCustomerUuid() {
-		return customerUuid;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public String getPersonUuid() {
-		return personUuid;
+	public Person getSalesPerson() {
+		return salesPerson;
 	}
 
-	public ArrayList<ProductList> getProductList() {
+	public ArrayList<Product> getProductList() {
 		return productList;
 	}
 
