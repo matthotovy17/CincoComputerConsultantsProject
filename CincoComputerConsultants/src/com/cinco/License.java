@@ -61,9 +61,7 @@ public class License extends Product {
 		DateTime beginDt = new DateTime(beginDate);
 		DateTime endDt = new DateTime(endDate);
 				
-		int effectiveDays = Days.daysBetween(beginDt, endDt).getDays();
-		
-		return effectiveDays;
+		return Days.daysBetween(beginDt, endDt).getDays();
 	}
 	
 	//returns the cost for that product.

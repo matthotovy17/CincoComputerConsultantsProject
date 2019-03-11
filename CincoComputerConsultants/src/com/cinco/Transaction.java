@@ -7,8 +7,6 @@
 
 package com.cinco;
 
-import java.util.ArrayList;
-
 
 public class Transaction {
 	

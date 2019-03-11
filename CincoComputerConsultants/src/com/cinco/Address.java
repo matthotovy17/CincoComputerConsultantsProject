@@ -9,11 +9,11 @@ package com.cinco;
 
 public class Address {
 
-	public String street;
-	public String city;
-	public String state;
-	public String zip;
-	public String country;
+	private String street;
+	private String city;
+	private String state;
+	private String zip;
+	private String country;
 
 	public Address(String street, String city, String state, String zip, String country) {
 		this.street = street;

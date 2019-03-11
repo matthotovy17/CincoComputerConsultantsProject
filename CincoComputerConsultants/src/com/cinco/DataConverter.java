@@ -8,12 +8,14 @@
 
 package com.cinco;
 
-import java.util.Map;
-
 public class DataConverter {
 
-	Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");
-	Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
-	Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
+//	Map<String, Person> personMap = FileReader.getPersonsData("data/Persons.dat");
+//	Map<String, Customer> customerMap = FileReader.getCustomersData("data/Customers.dat", personMap);
+//	Map<String, Product> productMap = FileReader.getProductsData("data/Products.dat", personMap);
+	
+	
+	//This class with be converter into the "dataConverter" class to read in thr data from the dataBase.
+	
 
 }

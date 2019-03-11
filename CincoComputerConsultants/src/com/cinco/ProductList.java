@@ -8,15 +8,13 @@
 package com.cinco;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class ProductList {
 	
 	//We will not longer need to use this class since we are using the copy constructors in each product.
 
-	public Product product;
-	public ArrayList<String> invoiceProductData;
+	private Product product;
+	private ArrayList<String> invoiceProductData;
 
 	public ProductList(Product product, ArrayList<String> invoiceProductData) {
 		this.product = product;
@@ -35,13 +33,5 @@ public class ProductList {
 		return invoiceProductData;
 	
 	}
-	
-	//We should not need this function anymore because it is in the License Object.
-	
-//	public long getDaysBetween(Date beginDate, Date endDate) {
-//		long difference = endDate.getTime() - beginDate.getTime();
-//		return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
-//	
-//	}
 
 }

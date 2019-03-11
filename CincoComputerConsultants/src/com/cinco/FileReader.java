@@ -41,19 +41,19 @@ public class FileReader {
 			String line = personFile.nextLine();
 			if (!line.trim().isEmpty()) {
 				Person p = null;
-				String tokens[] = line.split(";");
+				String[] tokens = line.split(";");
 				String personUuid = tokens[0];
-				String name[] = tokens[1].split(",");
+				String[] name = tokens[1].split(",");
 				String lastName = name[0];
 				String firstName = name[1];
-				String addr[] = tokens[2].split(",");
+				String[] addr = tokens[2].split(",");
 				Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
 				ArrayList<String> email = new ArrayList<String>();
 				if (tokens.length != 4) {
 					email.add("");
 					p = new Person(personUuid, lastName, firstName, address, email);
 				} else {
-					String emails[] = tokens[3].split(",");
+					String[] emails = tokens[3].split(",");
 					for (int j = 0; j < emails.length; j++) {
 						email.add(emails[j]);
 					}
@@ -85,12 +85,12 @@ public class FileReader {
 			String line = customerFile.nextLine();
 			if (!line.trim().isEmpty()) {
 				Customer c = null;
-				String tokens[] = line.split(";");
+				String[] tokens = line.split(";");
 				String customerUuid = tokens[0];
 				Person primaryContact = personMap.get(tokens[2]);
 				String name = tokens[3];
-				String ad[] = tokens[4].split(",");
-				Address address = new Address(ad[0], ad[1], ad[2], ad[3], ad[4]);
+				String[] addr = tokens[4].split(",");
+				Address address = new Address(addr[0], addr[1], addr[2], addr[3], addr[4]);
 				// Read type and set parameters for corresponding customer subclass
 				if (tokens[1].equals("G")) {
 					c = new GovernmentCustomer(customerUuid, primaryContact, name, address);
@@ -122,7 +122,7 @@ public class FileReader {
 			String line = productsFile.nextLine();
 			if (!line.trim().isEmpty()) {
 				Product p = null;
-				String tokens[] = line.split(";");
+				String[] tokens = line.split(";");
 				String productUuid = tokens[0];
 				String name = tokens[2];
 				double pricePerUnit, annualLicenseFee, serviceFee, hourlyFee;
@@ -165,15 +165,15 @@ public class FileReader {
 			String line = invoiceFile.nextLine();
 			if (!line.trim().isEmpty()) {
 				Invoice inv = null;
-				String tokens[] = line.split(";");
+				String[] tokens = line.split(";");
 				String invoiceUuid = tokens[0];
 				Customer customer = customerMap.get(tokens[1]);
 				Person salesPerson = personMap.get(tokens[2]);
-				String productArray[] = tokens[3].split(",");
+				String[] productArray = tokens[3].split(",");
 				ArrayList<Product> pl = new ArrayList<Product>();
 				// parse the invoice file on the different products and data.
  				for(int j = 0; j < productArray.length; j++) {
-					String productDataList[] = productArray[j].split(":");
+					String[] productDataList = productArray[j].split(":");
 					Product product = productMap.get(productDataList[0]);
 					Product p = null;
 					String type = product.getType();

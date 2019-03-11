@@ -44,15 +44,17 @@ public class Consultation extends Product {
 		return hourlyFee;
 	}
 
+	// Returns the tax rate for a Consultation.
 	public double getTaxRate() {
 		return .0425;
 	}
 
+	// Returns the service fee for a Consultation.
 	public double getServiceFee() {
 		return 150.00;
 	}
 
-	//returns the cost for that product.
+	//Returns the cost for that product.
 	public double getProductCost() {
 		return (this.getHourlyFee() * this.getBillableHours());
 	}
