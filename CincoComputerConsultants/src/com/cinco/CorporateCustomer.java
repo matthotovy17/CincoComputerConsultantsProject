@@ -7,6 +7,11 @@
 
 package com.cinco;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("C")
 public class CorporateCustomer extends Customer {
 
 	public CorporateCustomer(String customerUuid, Person primaryContactUuid, String name, Address address) {

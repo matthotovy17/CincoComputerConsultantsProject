@@ -7,19 +7,26 @@
 
 package com.cinco;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("E")
 public class Equipment extends Product {
 
+	@Column(name = "pricePerUnit")
 	private double pricePerUnit;
 	private int numberOfUnits;
 
-	public Equipment(String productUuid, String name, double pricePerUnit) {
-		super(productUuid, name);
+	public Equipment(String productKey, String productUuid, String name, double pricePerUnit) {
+		super(productKey, productUuid, name);
 		this.pricePerUnit = pricePerUnit;
 	}
 
 	//Copy Constructor
 	public Equipment(Equipment e, int numberOfUnits) {
-		super(e.getProductUuid(), e.getName());
+		super(e.getProductKey(), e.getProductUuid(), e.getName());
 		this.pricePerUnit = e.getPricePerUnit();
 		this.numberOfUnits = numberOfUnits;
 	}

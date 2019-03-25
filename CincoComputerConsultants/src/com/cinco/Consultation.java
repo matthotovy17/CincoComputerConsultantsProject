@@ -7,22 +7,31 @@
 
 package com.cinco;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("C")
 public class Consultation extends Product {
 
 	private Person consultantPerson; 
+	
+	@Column(name = "hourlyFee")
 	private double hourlyFee;
+	
 	private int billableHours;
 	
 
-	public Consultation(String productUuid, String name, Person consultantPerson, double hourlyFee) {
-		super(productUuid, name);
+	public Consultation(String productKey, String productUuid, String name, Person consultantPerson, double hourlyFee) {
+		super(productKey, productUuid, name);
 		this.consultantPerson = consultantPerson;
 		this.hourlyFee = hourlyFee;
 	}
 	
 	// Copy Constructor
 	public Consultation(Consultation c, int billableHours) {
-		super(c.getProductUuid(), c.getName());
+		super(c.getProductKey(), c.getProductUuid(), c.getName());
 		this.consultantPerson = c.getConsultantPerson();
 		this.hourlyFee = c.getHourlyFee();
 		this.billableHours = billableHours;

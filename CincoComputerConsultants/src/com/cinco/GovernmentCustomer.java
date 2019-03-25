@@ -7,6 +7,11 @@
 
 package com.cinco;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("G")
 public class GovernmentCustomer extends Customer {
 
 	public GovernmentCustomer(String customerUuid, Person primaryContactUuid, String name, Address address) {

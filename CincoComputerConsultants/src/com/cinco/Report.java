@@ -48,7 +48,7 @@ public class Report {
 			taxes = Math.round(taxes * 100.00) / 100.00;
 			total = Math.round(total * 100.00) / 100.00 + serviceFees;
 			sb.append(String.format("%-8s %-30s %-30s $%-15.2f $%-15.2f $%-15.2f $%-15.2f\n", inv.getInvoiceUuid(),
-					c.getName(), p.getName(), subTotal, serviceFees, taxes, total + complianceFee));
+					c.getCustomerName(), p.getName(), subTotal, serviceFees, taxes, total + complianceFee));
 		}
 
 		sb.append("===================================================================="
@@ -90,7 +90,7 @@ public class Report {
 			System.out.println("=================");
 			System.out.println("Salesperson: " + p.getName());
 			System.out.println("Customer Info:");
-			System.out.printf("  %s (%s)\n", c.getName(), c.getCustomerUuid());
+			System.out.printf("  %s (%s)\n", c.getCustomerName(), c.getCustomerUuid());
 			System.out.printf("  %s\n", primaryContact.getName());
 			System.out.printf("  %s\n  %s %s %s %s\n", address.getStreet(), address.getCity(), address.getState(),
 					address.getZip(), address.getCountry());
