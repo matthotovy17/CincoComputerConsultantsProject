@@ -7,28 +7,42 @@
 
 package com.cinco;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
+@Entity
+@DiscriminatorValue("L")
 public class License extends Product {
-
+	
+	@Column(name = "annualLicenseFee")
 	private double annualLicenseFee;
+	
+	@Column(name = "serviceFee")
 	private double serviceFee;
+	
 	private int effectiveDays;
-	//private String effectiveDates;
+	private String beginDate;
+	private String endDate;
 
-	public License(String productUuid, String name, double annualLicenseFee, double serviceFee) {
-		super(productUuid, name);
+	public License(String productKey, String productUuid, String name, double annualLicenseFee, double serviceFee) {
+		super(productKey, productUuid, name);
 		this.annualLicenseFee = annualLicenseFee;
 		this.serviceFee = serviceFee;
 	}
 	
 	//Copy Constructor
-	public License(License l, int effectiveDays) {
-		super(l.getProductUuid(), l.getName());
+	public License(License l, int effectiveDays, String beginDate, String endDate) {
+		super(l.getProductKey(), l.getProductUuid(), l.getName());
 		this.annualLicenseFee = l.getAnnualLicenseFee();
 		this.serviceFee = l.getServiceFee();
 		this.effectiveDays = effectiveDays;
+		this.beginDate = beginDate;
+		this.endDate = endDate;
+		
 	}
 	
 	public License() {
@@ -54,6 +68,14 @@ public class License extends Product {
 	
 	public int getEffectiveDays() {
 		return effectiveDays;
+	}
+	
+	public String getBeginDate() {
+		return beginDate;
+	}
+	
+	public String getEndDate() {
+		return endDate;
 	}
 	
 	//gets the number of days between two ISO dates.

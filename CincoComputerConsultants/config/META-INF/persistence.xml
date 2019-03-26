@@ -4,7 +4,8 @@
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 
-    <persistence-unit name="album_database">
+	<!-- to get into the sql folder we do sql/-->
+    <persistence-unit name="sql/invoiceDB">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
@@ -12,9 +13,9 @@
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://cse.unl.edu/cbourke"/>
-            <property name="hibernate.connection.username" value="cbourke"/>
-            <property name="hibernate.connection.password" value="Spring2016"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://cse.unl.edu/cgalinsky"/>
+            <property name="hibernate.connection.username" value="cgalinsky"/>
+            <property name="hibernate.connection.password" value="7gq-yP"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
         </properties>
     </persistence-unit>
