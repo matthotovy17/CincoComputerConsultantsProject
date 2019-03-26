@@ -7,15 +7,46 @@
 
 package com.cinco;
 
-public class Address {
+import java.io.Serializable;
 
+import org.hibernate.annotations.Entity;
+
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Address")
+public class Address  {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "addressKey", nullable = false)
+	private int addressKey;
+	
+	@Column(name = "street", nullable = false)
 	private String street;
+	
+	@Column(name = "city", nullable = false)
 	private String city;
-	private String state;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "stateKey")//This will be the foreign key to the state.
+	private State state; //switched from string to hold the State object
+	
+	@Column(name = "zip")
 	private String zip;
-	private String country;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "countryKey", nullable = false)
+	private Country country; 
 
-	public Address(String street, String city, String state, String zip, String country) {
+	public Address(String street, String city, State state, String zip, Country country) {
 		this.street = street;
 		this.city = city;
 		this.state = state;
@@ -36,7 +67,7 @@ public class Address {
 		return city;
 	}
 
-	public String getState() {
+	public State getState() {
 		return state;
 	}
 
@@ -44,7 +75,7 @@ public class Address {
 		return zip;
 	}
 
-	public String getCountry() {
+	public Country getCountry() {
 		return country;
 	}
 }

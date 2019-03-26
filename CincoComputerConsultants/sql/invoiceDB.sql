@@ -31,7 +31,7 @@ create table Address (
   city varchar(100) not null,
   zip varchar(100),
   stateKey int,
-  countryKey int,
+  countryKey int not null, 
   foreign key (countryKey) references Country(countryKey),
   foreign key (stateKey) references State(stateKey)
 )engine=InnoDB,collate=latin1_general_cs;
@@ -66,7 +66,7 @@ create table Customer (
 create table Product (
   productKey int primary key not null auto_increment,
   productUuid varchar(100) not null,
-  productType varchar(10),
+  productType varchar(10) not null,
   name varchar(100) not null,
   personKey int,
   hourlyFee double,
@@ -148,7 +148,7 @@ insert into Person (personUuid, lastName, firstName, addressKey) values ("55bb",
 insert into Person (personUuid, lastName, firstName, addressKey) values ("944c", "Castro", "Starlin", (select addressKey from Address where street = "1060 West Addison Street")); #XXX
 
 # Sales Person
-# for the addressKey we may want to think about adding in and's for the rest of the address stuff to make it more specific.
+# for the addressKey we may want to think about adding in ands for the rest of the address stuff to make it more specific.
 insert into Person (personUuid, lastName, firstName, addressKey) values ("2342", "O'Brien", "Miles", (select addressKey from Address where street = "123 Friendly Street"));
 insert into Person (personUuid, lastName, firstName, addressKey) values ("aef1", "Gekko", "Gordon", (select addressKey from Address where street = "1 Wall Street"));
 insert into Person (personUuid, lastName, firstName, addressKey) values ("321f", "Fox", "Bud", (select addressKey from Address where street = "321 Bronx Street"));
