@@ -23,7 +23,7 @@ import javax.persistence.Transient;
 @Entity
 @Table(name="Person")
 public class Person {
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="personKey", nullable=false)
