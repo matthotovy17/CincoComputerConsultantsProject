@@ -88,26 +88,6 @@ public class DataLoader {
 		}
 		return customers;
 	}
-	
-	public static List<String> getEmails() {
-		EntityManager em = null;
-		List<String> emails = null;
-		
-		try {
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
-			
-			String query = "FROM Email";
-			emails = (List<String>) em.createQuery(query).getResultList();
-		} catch(Exception e) {
-			throw new RuntimeException("Error Loading the Emails", e);
-		} finally {
-			if(em != null && em.isOpen()) {
-				em.close();
-			}
-		}
-		return emails;
-	}
 
 	public static List<Person> getPersons() {
 		EntityManager em = null;
@@ -127,66 +107,6 @@ public class DataLoader {
 			}
 		}
 		return persons;
-	}
-	
-	public static List<Address> getAddress() {
-		EntityManager em = null;
-		List<Address> addresses = null;
-		
-		try {
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
-			
-			String query = "FROM Address";
-			addresses = (List<Address>) em.createQuery(query).getResultList();
-		} catch(Exception e) {
-			throw new RuntimeException("Error Loading the Addresses", e);
-		} finally {
-			if(em != null && em.isOpen()) {
-				em.close();
-			}
-		}
-		return addresses;
-	}
-	
-	public static List<State> getStates() {
-		EntityManager em = null;
-		List<State> states = null;
-		
-		try {
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
-			
-			String query = "FROM State";
-			states = (List<State>) em.createQuery(query).getResultList();
-		} catch(Exception e) {
-			throw new RuntimeException("Error Loading the States", e);
-		} finally {
-			if(em != null && em.isOpen()) {
-				em.close();
-			}
-		}
-		return states;
-	}
-	
-	public static List<Country> getCountries() {
-		EntityManager em = null;
-		List<Country> countries = null;
-		
-		try {
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
-			
-			String query = "FROM Country";
-			countries = (List<Country>) em.createQuery(query).getResultList();
-		} catch(Exception e) {
-			throw new RuntimeException("Error Loading the Countries", e);
-		} finally {
-			if(em != null && em.isOpen()) {
-				em.close();
-			}
-		}
-		return countries;
 	}
 	
 	public static Invoice getInvoiceByKey(int invoiceKey) {
@@ -264,6 +184,102 @@ public class DataLoader {
 		}
 		return c;
 	}
+	
+	public static Address getAddressByKey(int addressKey) {
+		EntityManager em = null;
+		Address a = null;
+		
+		try {
+			em = emf.createEntityManager();
+			em.getTransaction().begin();
+			String query = "FROM Address a WHERE a.addressKey = :addressKey";
+			a = (Address) em.createQuery(query).setParameter("addressKey", addressKey).getSingleResult();
+		} catch (Exception e) {
+			throw new RuntimeException("Error loading Address with key = "+addressKey, e);
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+		return a;
+	}
+	
+	public static Country getCountryByKey(int countryKey) {
+		EntityManager em = null;
+		Country co = null;
+		
+		try {
+			em = emf.createEntityManager();
+			em.getTransaction().begin();
+			String query = "FROM Country co WHERE co.countryKey = :countryKey";
+			co = (Country) em.createQuery(query).setParameter("countryKey", countryKey).getSingleResult();
+		} catch (Exception e) {
+			throw new RuntimeException("Error loading Country with key = "+countryKey, e);
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+		return co;
+	}
+	
+	public static State getStateByKey(int stateKey) {
+		EntityManager em = null;
+		State s = null;
+		
+		try {
+			em = emf.createEntityManager();
+			em.getTransaction().begin();
+			String query = "FROM State s WHERE s.stateKey = :stateKey";
+			s = (State) em.createQuery(query).setParameter("stateKey", stateKey).getSingleResult();
+		} catch (Exception e) {
+			throw new RuntimeException("Error loading State with key = "+stateKey, e);
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+		return s;
+	}
+	
+	public static String getEmailByKey(int emailKey) {
+		EntityManager em = null;
+		String email = null;
+		
+		try {
+			em = emf.createEntityManager();
+			em.getTransaction().begin();
+			String query = "FROM Email email WHERE email.emailKey = :emailKey";
+			email = (String) em.createQuery(query).setParameter("emailKey", emailKey).getSingleResult();
+		} catch (Exception e) {
+			throw new RuntimeException("Error loading Email with key = "+emailKey, e);
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+		return email;
+	}
+	
+	public static InvoiceProduct getInvoiceProductByKey(int invoiceProductKey) {
+		EntityManager em = null;
+		InvoiceProduct ip = null;
+		
+		try {
+			em = emf.createEntityManager();
+			em.getTransaction().begin();
+			String query = "FROM InvoiceProduct ip WHERE ip.inovoiceProductKey = :invoiceProductKey";
+			ip = (InvoiceProduct) em.createQuery(query).setParameter("invoiceProductKey", invoiceProductKey).getSingleResult();
+		} catch (Exception e) {
+			throw new RuntimeException("Error loading Invoice Product with key = "+invoiceProductKey, e);
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+		return ip;
+	}
+	
 	//TODO: we need to add in more methods for loading all the different data that we need for the transaction class.
 	
 }
