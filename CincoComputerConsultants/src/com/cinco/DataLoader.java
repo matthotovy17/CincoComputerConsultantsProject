@@ -12,7 +12,16 @@ public class DataLoader {
 	public static List<Invoice> getInvoices() {
 		
 		EntityManager em = null;
+		List<InvoiceProduct> invoiceProducts = null;
 		List<Invoice> invoices = null;
+		List<Product> products = null;
+		List<Customer> customers = null;
+		List<String> emails = null;
+		List<Person> persons = null;
+		List<Address> addresses = null;
+		List<State> states = null;
+		List<Country> countries = null;
+		
 		
 		try {
 			em = emf.createEntityManager();
