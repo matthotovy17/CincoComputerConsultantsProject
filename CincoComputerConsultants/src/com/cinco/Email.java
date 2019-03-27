@@ -32,6 +32,8 @@ public class Email {
 		this.email = email;
 		this.person = person;
 	}
+	
+	public Email() { }
 
 	public Integer getEmailUuid() {
 		return emailUuid;

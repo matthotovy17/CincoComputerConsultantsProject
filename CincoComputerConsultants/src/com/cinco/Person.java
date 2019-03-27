@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Person")
 public class Person {
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="personKey", nullable=false)
