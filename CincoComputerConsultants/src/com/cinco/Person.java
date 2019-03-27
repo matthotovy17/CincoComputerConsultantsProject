@@ -7,7 +7,7 @@
 
 package com.cinco;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +18,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="Person")
@@ -30,28 +29,29 @@ public class Person {
 	private Integer personKey;
 	
 	@Column(name = "personUuid", nullable = false)
-	protected String personUuid;
+	private String personUuid;
 	
 	@Column(name = "lastName", nullable = false)
-	protected String lastName;
+	private String lastName;
 	
 	@Column(name = "firstName", nullable = false)
-	protected String firstName;
+	private String firstName;
 	
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name = "addressKey", nullable = false)
-	protected Address address;
+	private Address address;
 	
-	@Transient
-	protected ArrayList<String> email;
+	@OneToMany(fetch=FetchType.EAGER)
+    @JoinColumn(name="personId", nullable=false)
+	private List<Email> emails;
 
-	public Person(Integer personKey, String personUuid, String lastName, String firstName, Address address, ArrayList<String> email) {
+	public Person(Integer personKey, String personUuid, String lastName, String firstName, Address address, List<Email> emails) {
 		this.personKey = personKey;
 		this.personUuid = personUuid;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.address = address;
-		this.email = email;
+		this.emails = emails;
 	}
 	
 	public Person() { }
@@ -76,8 +76,8 @@ public class Person {
 		return firstName;
 	}
 
-	public ArrayList<String> getEmail() {
-		return email;
+	public List<Email> getEmails () {
+		return emails;
 	}
 
 	public Address getAddress() {
