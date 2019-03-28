@@ -7,8 +7,13 @@
 
 package com.cinco;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 
 public class InvoiceReport {
@@ -24,9 +29,12 @@ public class InvoiceReport {
 //		Report.printSummaryReport(invoiceMap); //personMap, customerMap, productMap,
 //		Report.printDetailedReport(personMap, customerMap, productMap, invoiceMap);
 		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("InvoiceDB");
+        EntityManager em = emf.createEntityManager();
+
 		List<Person> persons = DataLoader.getPersons();
 		for(Person p : persons) {
-			System.out.println(p + " personKey = " + p.getPersonKey());
+			System.out.println(p);
 		}
 	}
 	

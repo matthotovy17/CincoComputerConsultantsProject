@@ -6,7 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DataLoader {
-	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("invoiceDataBase");
+	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("invoiceDB");
 
 	public static List<InvoiceProduct> getInvoiceProducts() {
 		EntityManager em = null;
